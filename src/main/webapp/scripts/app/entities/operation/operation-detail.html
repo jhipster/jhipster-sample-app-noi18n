@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span>Operation</span> {{operation.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>Date</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{operation.date}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{operation.description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Amount</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{operation.amount}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>bankAccount</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{operation.bankAccount.name}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="operation"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>
