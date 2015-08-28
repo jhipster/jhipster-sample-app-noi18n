@@ -16,6 +16,7 @@
     "frontendBuilder": "grunt",
     "javaVersion": "8",
     "enableTranslation": false,
-    "rememberMeKey": "b9fd3a8354237770b6d4ae4a052a0b3d1c164792"
+    "rememberMeKey": "b9fd3a8354237770b6d4ae4a052a0b3d1c164792",
+    "useSass": false
   }
 }
