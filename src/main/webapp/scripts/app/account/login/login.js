@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+angular.module('sampleno18nApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('login', {

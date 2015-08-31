@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+angular.module('sampleno18nApp')
     .factory('BankAccount', function ($resource, DateUtils) {
         return $resource('api/bankAccounts/:id', {}, {
             'query': { method: 'GET', isArray: true},

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+angular.module('sampleno18nApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('docs', {
@@ -14,6 +14,9 @@ angular.module('jhipsterApp')
                     'content@': {
                         templateUrl: 'scripts/app/admin/docs/docs.html'
                     }
+                },
+                resolve: {
+                    
                 }
             });
     });

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+angular.module('sampleno18nApp')
     .controller('OperationController', function ($scope, Operation, ParseLinks) {
         $scope.operations = [];
         $scope.page = 1;

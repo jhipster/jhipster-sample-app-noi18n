@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp', ['LocalStorageModule', 
+angular.module('sampleno18nApp', ['LocalStorageModule', 
                'ui.bootstrap', // for modal dialogs
     'ngResource', 'ui.router', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload', 'infinite-scroll'])
 
@@ -18,7 +18,7 @@ angular.module('jhipsterApp', ['LocalStorageModule',
         });
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
-            var titleKey = 'jhipster' ;
+            var titleKey = 'sampleNo18n' ;
 
             $rootScope.previousStateName = fromState.name;
             $rootScope.previousStateParams = fromParams;

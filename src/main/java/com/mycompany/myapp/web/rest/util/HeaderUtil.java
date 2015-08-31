@@ -10,8 +10,8 @@ public class HeaderUtil {
  
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-jhipsterApp-alert", message);
-        headers.add("X-jhipsterApp-params", param);
+        headers.add("X-sampleno18nApp-alert", message);
+        headers.add("X-sampleno18nApp-params", param);
         return headers;
     }
     

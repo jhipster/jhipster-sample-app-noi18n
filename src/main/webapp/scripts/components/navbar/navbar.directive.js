@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+angular.module('sampleno18nApp')
     .directive('activeLink', function(location) {
         return {
             restrict: 'A',

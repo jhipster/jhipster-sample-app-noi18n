@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jhipsterApp')
+angular.module('sampleno18nApp')
     .directive('jhAlert', function(AlertService) {
 		return {
             restrict: 'E',
@@ -27,7 +27,7 @@ angular.module('jhipsterApp')
 	            function($scope) {
 	                $scope.alerts = AlertService.get();
 
-					var cleanHttpErrorListener = $rootScope.$on('jhipsterApp.httpError', function (event, httpResponse) {
+					var cleanHttpErrorListener = $rootScope.$on('sampleno18nApp.httpError', function (event, httpResponse) {
 					    var i;
 					    event.stopPropagation();
 					    switch (httpResponse.status) {
