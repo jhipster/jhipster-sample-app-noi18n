@@ -1,4 +1,4 @@
-# Developping sampleNo18n
+# Developing sampleNo18n
 
 sampleNo18n was generated using JHipster, you can find documentation and help at [JHipster][].
 
