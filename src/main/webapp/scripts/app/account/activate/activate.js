@@ -7,7 +7,7 @@ angular.module('sampleno18nApp')
                 parent: 'account',
                 url: '/activate?key',
                 data: {
-                    roles: [],
+                    authorities: [],
                     pageTitle: 'Activation'
                 },
                 views: {
@@ -21,4 +21,3 @@ angular.module('sampleno18nApp')
                 }
             });
     });
-

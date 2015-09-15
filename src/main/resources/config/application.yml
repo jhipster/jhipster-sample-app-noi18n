@@ -24,6 +24,11 @@ mail:
     from: sampleNo18n@localhost
 
 
+spring:
+    mvc:
+        favicon:
+            enabled: false
+
 swagger:
     title: sampleNo18n API
     description: sampleNo18n applications and beyond!

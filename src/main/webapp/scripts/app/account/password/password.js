@@ -7,7 +7,7 @@ angular.module('sampleno18nApp')
                 parent: 'account',
                 url: '/password',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                     pageTitle: 'Password'
                 },
                 views: {

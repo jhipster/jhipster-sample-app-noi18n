@@ -10,6 +10,7 @@ angular.module('sampleno18nApp')
                         data = angular.fromJson(data);
                         return data;
                     }
-                }
+                },
+                'update': { method:'PUT' }
             });
         });

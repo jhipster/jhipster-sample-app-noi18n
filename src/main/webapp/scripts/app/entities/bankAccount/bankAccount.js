@@ -7,7 +7,7 @@ angular.module('sampleno18nApp')
                 parent: 'entity',
                 url: '/bankAccounts',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                     pageTitle: 'BankAccounts'
                 },
                 views: {
@@ -23,7 +23,7 @@ angular.module('sampleno18nApp')
                 parent: 'entity',
                 url: '/bankAccount/{id}',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                     pageTitle: 'BankAccount'
                 },
                 views: {
@@ -42,7 +42,7 @@ angular.module('sampleno18nApp')
                 parent: 'bankAccount',
                 url: '/new',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({
@@ -65,7 +65,7 @@ angular.module('sampleno18nApp')
                 parent: 'bankAccount',
                 url: '/{id}/edit',
                 data: {
-                    roles: ['ROLE_USER'],
+                    authorities: ['ROLE_USER'],
                 },
                 onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
                     $modal.open({

@@ -7,7 +7,7 @@ angular.module('sampleno18nApp')
                 parent: 'site',
                 url: '/error',
                 data: {
-                    roles: [],
+                    authorities: [],
                     pageTitle: 'Error page!'
                 },
                 views: {
@@ -23,7 +23,7 @@ angular.module('sampleno18nApp')
                 parent: 'site',
                 url: '/accessdenied',
                 data: {
-                    roles: []
+                    authorities: []
                 },
                 views: {
                     'content@': {

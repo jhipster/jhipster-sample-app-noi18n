@@ -7,7 +7,7 @@ angular.module('sampleno18nApp')
                 parent: 'admin',
                 url: '/audits',
                 data: {
-                    roles: ['ROLE_ADMIN'],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'Audits'
                 },
                 views: {

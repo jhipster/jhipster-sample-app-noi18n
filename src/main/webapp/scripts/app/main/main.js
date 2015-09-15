@@ -7,7 +7,7 @@ angular.module('sampleno18nApp')
                 parent: 'site',
                 url: '/',
                 data: {
-                    roles: []
+                    authorities: []
                 },
                 views: {
                     'content@': {
