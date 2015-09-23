@@ -8,7 +8,7 @@ angular.module('sampleno18nApp')
                 url: '/user-management',
                 data: {
                     authorities: ['ROLE_ADMIN'],
-                    pageTitle: 'Users'
+                    pageTitle: 'sampleNo18n'
                 },
                 views: {
                     'content@': {
@@ -17,10 +17,7 @@ angular.module('sampleno18nApp')
                     }
                 },
                 resolve: {
-                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                        $translatePartialLoader.addPart('user-management');
-                        return $translate.refresh();
-                    }]
+                    
                 }
             })
             .state('user-management-detail', {
@@ -28,7 +25,7 @@ angular.module('sampleno18nApp')
                 url: '/user-management/:login',
                 data: {
                     authorities: ['ROLE_ADMIN'],
-                    pageTitle: 'User'
+                    pageTitle: 'sampleNo18n'
                 },
                 views: {
                     'content@': {
@@ -37,10 +34,7 @@ angular.module('sampleno18nApp')
                     }
                 },
                 resolve: {
-                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                        $translatePartialLoader.addPart('user-management');
-                        return $translate.refresh();
-                    }]
+                    
                 }
             });
     });
