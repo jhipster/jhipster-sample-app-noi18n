@@ -9,6 +9,6 @@ angular.module('sampleno18nApp')
                     AlertService.success(alertKey, { param : response.headers('X-sampleno18nApp-params')});
                 }
                 return response;
-            },
+            }
         };
     });
