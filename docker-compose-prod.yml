@@ -1,6 +1,6 @@
 jhipster-prod-mysql:
   container_name: sampleNo18n-prod-mysql
-  image : mysql
+  image: mysql
   # volumes:
   # - ~/volumes/jhipster/sampleNo18n/prod-mysql/:/var/lib/mysql/
   environment:
