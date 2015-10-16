@@ -8,7 +8,9 @@ angular.module('sampleno18nApp')
                 $scope.label = result;
             });
         };
-        $rootScope.$on('sampleno18nApp:labelUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('sampleno18nApp:labelUpdate', function(event, result) {
             $scope.label = result;
         });
+        $scope.$on('$destroy', unsubscribe);
+
     });

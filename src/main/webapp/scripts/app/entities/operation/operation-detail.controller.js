@@ -8,7 +8,9 @@ angular.module('sampleno18nApp')
                 $scope.operation = result;
             });
         };
-        $rootScope.$on('sampleno18nApp:operationUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('sampleno18nApp:operationUpdate', function(event, result) {
             $scope.operation = result;
         });
+        $scope.$on('$destroy', unsubscribe);
+
     });

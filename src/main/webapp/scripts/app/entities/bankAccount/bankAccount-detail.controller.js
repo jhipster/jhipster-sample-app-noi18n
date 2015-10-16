@@ -8,7 +8,9 @@ angular.module('sampleno18nApp')
                 $scope.bankAccount = result;
             });
         };
-        $rootScope.$on('sampleno18nApp:bankAccountUpdate', function(event, result) {
+        var unsubscribe = $rootScope.$on('sampleno18nApp:bankAccountUpdate', function(event, result) {
             $scope.bankAccount = result;
         });
+        $scope.$on('$destroy', unsubscribe);
+
     });
