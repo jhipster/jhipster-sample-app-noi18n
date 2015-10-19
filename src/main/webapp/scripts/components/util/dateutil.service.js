@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleno18nApp')
+angular.module('sampleNo18nApp')
     .service('DateUtils', function ($filter) {
       this.convertLocaleDateToServer = function(date) {
         if (date) {

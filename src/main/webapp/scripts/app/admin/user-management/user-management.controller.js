@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleno18nApp')
+angular.module('sampleNo18nApp')
     .controller('UserManagementController', function ($scope, User, ParseLinks) {
         $scope.users = [];
         $scope.authorities = ["ROLE_USER", "ROLE_ADMIN"];

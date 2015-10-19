@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleno18nApp')
+angular.module('sampleNo18nApp')
     .controller('LoginController', function ($rootScope, $scope, $state, $timeout, Auth) {
         $scope.user = {};
         $scope.errors = {};

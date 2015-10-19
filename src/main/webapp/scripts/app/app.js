@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleno18nApp', ['LocalStorageModule', 
+angular.module('sampleNo18nApp', ['LocalStorageModule', 
                'ui.bootstrap', // for modal dialogs
     'ngResource', 'ui.router', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload', 'infinite-scroll'])
 

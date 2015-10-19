@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleno18nApp').controller('OperationDialogController',
+angular.module('sampleNo18nApp').controller('OperationDialogController',
     ['$scope', '$stateParams', '$modalInstance', 'entity', 'Operation', 'BankAccount', 'Label',
         function($scope, $stateParams, $modalInstance, entity, Operation, BankAccount, Label) {
 
@@ -14,7 +14,7 @@ angular.module('sampleno18nApp').controller('OperationDialogController',
         };
 
         var onSaveFinished = function (result) {
-            $scope.$emit('sampleno18nApp:operationUpdate', result);
+            $scope.$emit('sampleNo18nApp:operationUpdate', result);
             $modalInstance.close(result);
         };
 

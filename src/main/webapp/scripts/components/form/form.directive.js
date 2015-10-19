@@ -1,7 +1,7 @@
 /* globals $ */
 'use strict';
 
-angular.module('sampleno18nApp')
+angular.module('sampleNo18nApp')
     .directive('showValidation', function() {
         return {
             restrict: 'A',

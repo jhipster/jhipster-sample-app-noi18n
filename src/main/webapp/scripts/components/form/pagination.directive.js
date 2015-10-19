@@ -1,8 +1,8 @@
 /* globals $ */
 'use strict';
 
-angular.module('sampleno18nApp')
-    .directive('sampleno18nAppPagination', function() {
+angular.module('sampleNo18nApp')
+    .directive('sampleNo18nAppPagination', function() {
         return {
             templateUrl: 'scripts/components/form/pagination.html'
         };

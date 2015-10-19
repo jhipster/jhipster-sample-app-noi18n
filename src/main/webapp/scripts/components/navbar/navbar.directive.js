@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleno18nApp')
+angular.module('sampleNo18nApp')
     .directive('activeLink', function(location) {
         return {
             restrict: 'A',
