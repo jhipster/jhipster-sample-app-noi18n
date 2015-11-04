@@ -2,6 +2,7 @@
 
 angular.module('sampleNo18nApp')
     .controller('LabelController', function ($scope, $state, $modal, Label) {
+      
         $scope.labels = [];
         $scope.loadAll = function() {
             Label.query(function(result) {

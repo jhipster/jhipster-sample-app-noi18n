@@ -2,6 +2,7 @@
 
 angular.module('sampleNo18nApp')
     .controller('BankAccountController', function ($scope, $state, $modal, BankAccount) {
+      
         $scope.bankAccounts = [];
         $scope.loadAll = function() {
             BankAccount.query(function(result) {
