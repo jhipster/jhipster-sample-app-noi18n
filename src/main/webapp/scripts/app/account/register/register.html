@@ -27,7 +27,7 @@
             <form ng-show="!success" name="form" role="form" novalidate ng-submit="register()" show-validation>
 
                 <div class="form-group">
-                    <label for="login">Username</label>
+                    <label class="control-label" for="login">Username</label>
                     <input type="text" class="form-control" id="login" name="login" placeholder="Your username"
                            ng-model="registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[a-z0-9]*$/" required>
                     <div ng-show="form.login.$dirty && form.login.$invalid">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">E-mail</label>
+                    <label class="control-label" for="email">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Your e-mail"
                            ng-model="registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
                     <div ng-show="form.email.$dirty && form.email.$invalid">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password">New password</label>
+                    <label class="control-label" for="password">New password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="New password"
                            ng-model="registerAccount.password" ng-minlength=5 ng-maxlength=50 required>
                     <div ng-show="form.password.$dirty && form.password.$invalid">
@@ -93,7 +93,7 @@
                     <password-strength-bar password-to-check="registerAccount.password"></password-strength-bar>
                 </div>
                 <div class="form-group">
-                    <label for="confirmPassword">New password confirmation</label>
+                    <label class="control-label" for="confirmPassword">New password confirmation</label>
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm the new password"
                            ng-model="confirmPassword" ng-minlength=5 ng-maxlength=50 required>
                     <div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">

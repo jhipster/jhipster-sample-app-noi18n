@@ -49,7 +49,7 @@ angular.module('sampleNo18nApp')
                     size: 'lg',
                     resolve: {
                         threadDump: function() {
-                            return data;
+                            return data.content;
                         }
 
                     }
