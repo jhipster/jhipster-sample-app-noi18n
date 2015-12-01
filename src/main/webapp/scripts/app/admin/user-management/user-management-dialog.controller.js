@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('sampleNo18nApp').controller('UserManagementDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'User', 
-        function($scope, $stateParams, $modalInstance, entity, User) {
+    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'User', 
+        function($scope, $stateParams, $uibModalInstance, entity, User) {
 
         $scope.user = entity;
         $scope.authorities = ["ROLE_USER", "ROLE_ADMIN"];
         var onSaveSuccess = function (result) {
             $scope.isSaving = false;
-            $modalInstance.close(result);
+            $uibModalInstance.close(result);
         };
 
         var onSaveError = function (result) {
@@ -25,6 +25,6 @@ angular.module('sampleNo18nApp').controller('UserManagementDialogController',
         };
 
         $scope.clear = function() {
-            $modalInstance.dismiss('cancel');
+            $uibModalInstance.dismiss('cancel');
         };
 }]);

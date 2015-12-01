@@ -43,8 +43,8 @@ angular.module('sampleNo18nApp')
                 data: {
                     authorities: ['ROLE_ADMIN'],
                 },
-                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
-                    $modal.open({
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
                         templateUrl: 'scripts/app/admin/user-management/user-management-dialog.html',
                         controller: 'UserManagementDialogController',
                         size: 'lg',
@@ -71,8 +71,8 @@ angular.module('sampleNo18nApp')
                 data: {
                     authorities: ['ROLE_ADMIN'],
                 },
-                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
-                    $modal.open({
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
                         templateUrl: 'scripts/app/admin/user-management/user-management-dialog.html',
                         controller: 'UserManagementDialogController',
                         size: 'lg',

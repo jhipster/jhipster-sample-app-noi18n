@@ -7,7 +7,7 @@ angular.module('sampleNo18nApp')
 
         $scope.page = 0;
         $scope.loadAll = function () {
-            User.query({page: $scope.page, per_page: 20}, function (result, headers) {
+            User.query({page: $scope.page, size: 20}, function (result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
                 $scope.users = result;
             });

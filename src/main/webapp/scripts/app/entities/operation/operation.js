@@ -44,8 +44,8 @@ angular.module('sampleNo18nApp')
                 data: {
                     authorities: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
-                    $modal.open({
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
                         templateUrl: 'scripts/app/entities/operation/operation-dialog.html',
                         controller: 'OperationDialogController',
                         size: 'lg',
@@ -72,8 +72,8 @@ angular.module('sampleNo18nApp')
                 data: {
                     authorities: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
-                    $modal.open({
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
                         templateUrl: 'scripts/app/entities/operation/operation-dialog.html',
                         controller: 'OperationDialogController',
                         size: 'lg',
@@ -95,8 +95,8 @@ angular.module('sampleNo18nApp')
                 data: {
                     authorities: ['ROLE_USER'],
                 },
-                onEnter: ['$stateParams', '$state', '$modal', function($stateParams, $state, $modal) {
-                    $modal.open({
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
                         templateUrl: 'scripts/app/entities/operation/operation-delete-dialog.html',
                         controller: 'OperationDeleteController',
                         size: 'md',
