@@ -26,4 +26,11 @@ public class HeaderUtil {
     public static HttpHeaders createEntityDeletionAlert(String entityName, String param) {
         return createAlert("A " + entityName + " is deleted with identifier " + param, param);
     }
+
+    public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("X-sampleNo18nApp-error", defaultMessage);
+        headers.add("X-sampleNo18nApp-params", entityName);
+        return headers;
+    }
 }

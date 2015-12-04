@@ -20,6 +20,7 @@ angular.module('sampleNo18nApp').controller('UserManagementDialogController',
             if ($scope.user.id != null) {
                 User.update($scope.user, onSaveSuccess, onSaveError);
             } else {
+                $scope.user.langKey = 'en';
                 User.save($scope.user, onSaveSuccess, onSaveError);
             }
         };
