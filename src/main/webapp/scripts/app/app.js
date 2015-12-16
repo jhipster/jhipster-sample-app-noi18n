@@ -2,6 +2,7 @@
 
 angular.module('sampleNo18nApp', ['LocalStorageModule', 
     'ngResource', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload',
+    // jhipster-needle-angularjs-add-module JHipster will add new module
     'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar'])
 
     .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
@@ -80,6 +81,7 @@ angular.module('sampleNo18nApp', ['LocalStorageModule',
         $httpProvider.interceptors.push('notificationInterceptor');
         
     })
+    // jhipster-needle-angularjs-add-config JHipster will add new application configuration
     .config(['$urlMatcherFactoryProvider', function($urlMatcherFactory) {
         $urlMatcherFactory.type('boolean', {
             name : 'boolean',
@@ -89,4 +91,4 @@ angular.module('sampleNo18nApp', ['LocalStorageModule',
             is: function(val) { return [true,false,0,1].indexOf(val) >= 0 },
             pattern: /bool|true|0|1/
         });
-    }]);;
+    }]);

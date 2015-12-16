@@ -1,6 +1,7 @@
 'use strict';
 
 describe('Directive Tests ', function () {
+    beforeEach(mockApiAccountCall);
 
     var elm, scope, $httpBackend;
 
@@ -11,17 +12,7 @@ describe('Directive Tests ', function () {
         scope = $rootScope.$new();
         elm = angular.element(html);
         $compile(elm)(scope);
-
-        $httpBackend.whenGET(/api\/account\?cacheBuster=\d+/).respond({});
-        $httpBackend.whenGET('scripts/app/main/main.html').respond({});
-        $httpBackend.whenGET('scripts/components/navbar/navbar.html').respond({});
     }));
-
-    afterEach(function() {
-        $httpBackend.flush();
-        $httpBackend.verifyNoOutstandingExpectation();
-        $httpBackend.verifyNoOutstandingRequest();
-    });
 
     describe('Password strength', function () {
         it("Should display the password strength bar", function() {
