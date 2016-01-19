@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
 	.controller('user-managementDeleteController', function($scope, $uibModalInstance, entity, User) {
 
         $scope.user = entity;

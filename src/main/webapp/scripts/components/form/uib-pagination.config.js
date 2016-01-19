@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .config(function (uibPaginationConfig) {
         uibPaginationConfig.itemsPerPage = 20;
         uibPaginationConfig.maxSize = 5;

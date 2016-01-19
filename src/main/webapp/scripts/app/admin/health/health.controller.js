@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .controller('HealthController', function ($scope, MonitoringService, $uibModal) {
         $scope.updatingHealth = true;
         $scope.separator = '.';

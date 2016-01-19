@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .factory('Activate', function ($resource) {
         return $resource('api/activate', {}, {
             'get': { method: 'GET', params: {}, isArray: false}

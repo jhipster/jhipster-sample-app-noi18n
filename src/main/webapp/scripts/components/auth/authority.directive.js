@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .directive('hasAnyAuthority', ['Principal', function (Principal) {
         return {
             restrict: 'A',
@@ -28,6 +28,12 @@ angular.module('sampleNo18nApp')
 
                 if (authorities.length > 0) {
                     defineVisibility(true);
+                    
+                    scope.$watch(function(scope) {
+                        return Principal.isAuthenticated();
+                    }, function(newValue) {
+                        defineVisibility(true);
+                    });
                 }
             }
         };
@@ -61,6 +67,12 @@ angular.module('sampleNo18nApp')
 
                 if (authority.length > 0) {
                     defineVisibility(true);
+
+                    scope.$watch(function(scope) {
+                        return Principal.isAuthenticated();
+                    }, function(newValue) {
+                        defineVisibility(true);
+                    });
                 }
             }
         };

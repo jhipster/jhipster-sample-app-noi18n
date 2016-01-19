@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .directive('jhAlert', function(AlertService) {
         return {
             restrict: 'E',
@@ -32,7 +32,7 @@ angular.module('sampleNo18nApp')
 
                     $scope.alerts = [];
 
-                    var cleanHttpErrorListener = $rootScope.$on('sampleNo18nApp.httpError', function (event, httpResponse) {
+                    var cleanHttpErrorListener = $rootScope.$on('sampleno18nApp.httpError', function (event, httpResponse) {
                         var i;
                         event.stopPropagation();
                         switch (httpResponse.status) {
@@ -42,8 +42,8 @@ angular.module('sampleNo18nApp')
                                 break;
 
                             case 400:
-                                var errorHeader = httpResponse.headers('X-sampleNo18nApp-error');
-                                var entityKey = httpResponse.headers('X-sampleNo18nApp-params');
+                                var errorHeader = httpResponse.headers('X-sampleno18nApp-error');
+                                var entityKey = httpResponse.headers('X-sampleno18nApp-params');
                                 if (errorHeader) {
                                     var entityName = entityKey;
                                     addErrorAlert(errorHeader, errorHeader, {entityName: entityName});

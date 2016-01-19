@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
 	.controller('BankAccountDeleteController', function($scope, $uibModalInstance, entity, BankAccount) {
 
         $scope.bankAccount = entity;

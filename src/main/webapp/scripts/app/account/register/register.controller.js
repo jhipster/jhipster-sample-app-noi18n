@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .controller('RegisterController', function ($scope, $timeout, Auth) {
         $scope.success = null;
         $scope.error = null;

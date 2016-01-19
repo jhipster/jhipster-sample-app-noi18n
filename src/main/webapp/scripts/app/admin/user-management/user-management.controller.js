@@ -1,10 +1,13 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
-    .controller('UserManagementController', function ($scope, User, ParseLinks) {
+angular.module('sampleno18nApp')
+    .controller('UserManagementController', function ($scope, Principal, User, ParseLinks) {
         $scope.users = [];
         $scope.authorities = ["ROLE_USER", "ROLE_ADMIN"];
-
+		
+		Principal.identity().then(function(account) {
+            $scope.currentAccount = account;
+        });
         $scope.page = 1;
         $scope.loadAll = function () {
             User.query({page: $scope.page - 1, size: 20}, function (result, headers) {

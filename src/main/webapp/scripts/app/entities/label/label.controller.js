@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .controller('LabelController', function ($scope, $state, Label) {
 
         $scope.labels = [];

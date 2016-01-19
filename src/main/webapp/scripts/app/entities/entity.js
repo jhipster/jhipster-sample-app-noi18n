@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('entity', {

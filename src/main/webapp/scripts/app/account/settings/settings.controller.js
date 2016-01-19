@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .controller('SettingsController', function ($scope, Principal, Auth) {
         $scope.success = null;
         $scope.error = null;

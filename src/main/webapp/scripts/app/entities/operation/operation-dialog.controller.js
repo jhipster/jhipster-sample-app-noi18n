@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp').controller('OperationDialogController',
+angular.module('sampleno18nApp').controller('OperationDialogController',
     ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Operation', 'BankAccount', 'Label',
         function($scope, $stateParams, $uibModalInstance, entity, Operation, BankAccount, Label) {
 
@@ -14,7 +14,7 @@ angular.module('sampleNo18nApp').controller('OperationDialogController',
         };
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleNo18nApp:operationUpdate', result);
+            $scope.$emit('sampleno18nApp:operationUpdate', result);
             $uibModalInstance.close(result);
             $scope.isSaving = false;
         };

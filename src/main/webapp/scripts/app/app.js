@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('sampleNo18nApp', ['LocalStorageModule', 
+angular.module('sampleno18nApp', ['LocalStorageModule', 
     'ngResource', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload',
-    // jhipster-needle-angularjs-add-module JHipster will add new module
+    // jhipster-needle-angularjs-add-module JHipster will add new module here
     'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar'])
 
     .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
@@ -16,6 +16,7 @@ angular.module('sampleNo18nApp', ['LocalStorageModule',
             if (Principal.isIdentityResolved()) {
                 Auth.authorize();
             }
+			
             
         });
 
@@ -79,9 +80,10 @@ angular.module('sampleNo18nApp', ['LocalStorageModule',
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');
         $httpProvider.interceptors.push('notificationInterceptor');
+        // jhipster-needle-angularjs-add-interceptor JHipster will add new application interceptor here
         
     })
-    // jhipster-needle-angularjs-add-config JHipster will add new application configuration
+    // jhipster-needle-angularjs-add-config JHipster will add new application configuration here
     .config(['$urlMatcherFactoryProvider', function($urlMatcherFactory) {
         $urlMatcherFactory.type('boolean', {
             name : 'boolean',

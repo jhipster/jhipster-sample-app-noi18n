@@ -10,8 +10,8 @@ public class HeaderUtil {
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-sampleNo18nApp-alert", message);
-        headers.add("X-sampleNo18nApp-params", param);
+        headers.add("X-sampleno18nApp-alert", message);
+        headers.add("X-sampleno18nApp-params", param);
         return headers;
     }
 
@@ -29,8 +29,8 @@ public class HeaderUtil {
 
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-sampleNo18nApp-error", defaultMessage);
-        headers.add("X-sampleNo18nApp-params", entityName);
+        headers.add("X-sampleno18nApp-error", defaultMessage);
+        headers.add("X-sampleno18nApp-params", entityName);
         return headers;
     }
 }

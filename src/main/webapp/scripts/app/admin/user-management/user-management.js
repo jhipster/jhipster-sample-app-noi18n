@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('user-management', {
@@ -8,7 +8,7 @@ angular.module('sampleNo18nApp')
                 url: '/user-management',
                 data: {
                     authorities: ['ROLE_ADMIN'],
-                    pageTitle: 'sampleNo18n'
+                    pageTitle: 'Users'
                 },
                 views: {
                     'content@': {
@@ -25,7 +25,7 @@ angular.module('sampleNo18nApp')
                 url: '/user/:login',
                 data: {
                     authorities: ['ROLE_ADMIN'],
-                    pageTitle: 'sampleNo18n'
+                    pageTitle: 'User'
                 },
                 views: {
                     'content@': {

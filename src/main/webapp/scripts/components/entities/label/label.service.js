@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp')
+angular.module('sampleno18nApp')
     .factory('Label', function ($resource, DateUtils) {
         return $resource('api/labels/:id', {}, {
             'query': { method: 'GET', isArray: true},

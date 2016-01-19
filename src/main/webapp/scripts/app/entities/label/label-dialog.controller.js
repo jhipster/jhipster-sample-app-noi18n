@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('sampleNo18nApp').controller('LabelDialogController',
+angular.module('sampleno18nApp').controller('LabelDialogController',
     ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Label', 'Operation',
         function($scope, $stateParams, $uibModalInstance, entity, Label, Operation) {
 
@@ -13,7 +13,7 @@ angular.module('sampleNo18nApp').controller('LabelDialogController',
         };
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleNo18nApp:labelUpdate', result);
+            $scope.$emit('sampleno18nApp:labelUpdate', result);
             $uibModalInstance.close(result);
             $scope.isSaving = false;
         };
