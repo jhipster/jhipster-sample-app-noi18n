@@ -2,7 +2,7 @@
 
 describe('Controller Tests', function() {
 
-    describe('Operation Detail Controller', function() {
+    describe('Operation Management Detail Controller', function() {
         var $scope, $rootScope;
         var MockEntity, MockOperation, MockBankAccount, MockLabel;
         var createController;
@@ -32,7 +32,7 @@ describe('Controller Tests', function() {
 
         describe('Root Scope Listening', function() {
             it('Unregisters root scope listener upon scope destruction', function() {
-                var eventType = 'sampleno18nApp:operationUpdate';
+                var eventType = 'sampleNo18NApp:operationUpdate';
 
                 createController();
                 expect($rootScope.$$listenerCount[eventType]).toEqual(1);

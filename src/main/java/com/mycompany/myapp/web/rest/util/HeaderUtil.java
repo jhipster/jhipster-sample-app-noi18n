@@ -3,15 +3,15 @@ package com.mycompany.myapp.web.rest.util;
 import org.springframework.http.HttpHeaders;
 
 /**
- * Utility class for http header creation.
+ * Utility class for HTTP headers creation.
  *
  */
 public class HeaderUtil {
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-sampleno18nApp-alert", message);
-        headers.add("X-sampleno18nApp-params", param);
+        headers.add("X-sampleNo18NApp-alert", message);
+        headers.add("X-sampleNo18NApp-params", param);
         return headers;
     }
 
@@ -29,8 +29,8 @@ public class HeaderUtil {
 
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-sampleno18nApp-error", defaultMessage);
-        headers.add("X-sampleno18nApp-params", entityName);
+        headers.add("X-sampleNo18NApp-error", defaultMessage);
+        headers.add("X-sampleNo18NApp-params", entityName);
         return headers;
     }
 }

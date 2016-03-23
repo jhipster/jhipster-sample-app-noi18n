@@ -33,7 +33,7 @@ public class AsyncConfiguration implements AsyncConfigurer {
         executor.setCorePoolSize(jHipsterProperties.getAsync().getCorePoolSize());
         executor.setMaxPoolSize(jHipsterProperties.getAsync().getMaxPoolSize());
         executor.setQueueCapacity(jHipsterProperties.getAsync().getQueueCapacity());
-        executor.setThreadNamePrefix("sampleno18n-Executor-");
+        executor.setThreadNamePrefix("sample-no-18-n-Executor-");
         return new ExceptionHandlingAsyncTaskExecutor(executor);
     }
 
