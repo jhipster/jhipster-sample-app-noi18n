@@ -1,104 +1,31 @@
 <div>
     <h2><span>User</span> "{{vm.user.login}}"</h2>
-
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Field</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <span>Login</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control" value="{{vm.user.login}}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>FirstName</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control" value="{{vm.user.firstName}}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>LastName</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control" value="{{vm.user.lastName}}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Email</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control" value="{{vm.user.email}}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Activated</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control" value="{{vm.user.activated}}" readonly>
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <span>CreatedBy</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control" value="{{vm.user.createdBy}}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>CreatedDate</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control"
-                           value="{{vm.user.createdDate | date:'dd/MM/yy HH:mm' }}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>LastModifiedBy</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control" value="{{vm.user.lastModifiedBy}}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>LastCreatedDate</span>
-                </td>
-                <td>
-                    <input type="text" class="input-sm form-control"
-                           value="{{vm.user.lastModifiedDate | date:'dd/MM/yy HH:mm'}}" readonly>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Profiles</span>
-                </td>
-                <td>
-                    <ul class="list-unstyled">
-                        <li ng-repeat="authority in user.authorities"><span>{{authority}}</span></li>
-                    </ul>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
+    <dl class="dl-horizontal">
+        <dt><span>Login</span></dt>
+        <dd><span>{{vm.user.login}}<span></dd>
+        <dt><span>First Name</span></dt>
+        <dd>{{vm.user.firstName}}</dd>
+        <dt><span>Last Name</span></dt>
+        <dd>{{vm.user.lastName}}</dd>
+        <dt><span>Email</span></dt>
+        <dd>{{vm.user.email}}</dd>
+        <dt><span>Activated</span></dt>
+        <dd>{{vm.user.activated}}</dd>
+        <dt><span>Created By</span></dt>
+        <dd>{{vm.user.createdBy}}</dd>
+        <dt><span>Created Date</span></dt>
+        <dd>{{vm.user.createdDate | date:'dd/MM/yy HH:mm' }}</dd>
+        <dt><span>Last Modified By</span></dt>
+        <dd>{{vm.user.lastModifiedBy}}</dd>
+        <dt><span>Last Modified Date</span></dt>
+        <dd>{{vm.user.lastModifiedDate | date:'dd/MM/yy HH:mm'}}</dd>
+        <dt><span>Profiles</span></dt>
+        <dd>
+            <ul class="list-unstyled">
+                <li ng-repeat="authority in user.authorities"><span>{{authority}}</span></li>
+            </ul>
+        </dd>
+    </dl>
     <button type="submit"
             ui-sref="user-management"
             class="btn btn-info">

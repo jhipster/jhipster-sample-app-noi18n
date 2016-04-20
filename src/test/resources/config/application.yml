@@ -11,6 +11,8 @@
 # ===================================================================
 
 spring:
+    application:
+        name: sampleNo18n
     datasource:
         url: jdbc:h2:mem:sampleNo18n;DB_CLOSE_DELAY=-1
         name:
@@ -73,3 +75,4 @@ jhipster:
         contactEmail:
         license:
         licenseUrl:
+        enabled: false

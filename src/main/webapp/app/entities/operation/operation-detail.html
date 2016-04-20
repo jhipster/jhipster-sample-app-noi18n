@@ -3,27 +3,27 @@
     <h2><span>Operation</span> {{vm.operation.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
-        <dt><span>Date</dt></dt>
+        <dt><span>Date</span></dt>
         <dd>
             <span>{{vm.operation.date | date:'medium'}}</span>
         </dd>
         <hr>
-        <dt><span>Description</dt></dt>
+        <dt><span>Description</span></dt>
         <dd>
-            <span>{{vm.operation.description}}<span>
+            <span>{{vm.operation.description}}</span>
         </dd>
         <hr>
-        <dt><span>Amount</dt></dt>
+        <dt><span>Amount</span></dt>
         <dd>
-            <span>{{vm.operation.amount}}<span>
+            <span>{{vm.operation.amount}}</span>
         </dd>
         <hr>
-        <dt><span>bankAccount</span></dt>
+        <dt><span>Bank Account</span></dt>
         <dd>
             <a ui-sref="bank-account-detail({id:vm.operation.bankAccount.id})">{{vm.operation.bankAccount.name}}</a>
         </dd>
         <hr>
-        <dt><span>label</span></dt>
+        <dt><span>Label</span></dt>
         <dd>
             <span ng-repeat="label in vm.operation.labels">
                 <a ui-sref="label-detail({id: {{label.id}}})">{{label.label}}</a>{{$last ? '' : ', '}}
