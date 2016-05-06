@@ -53,6 +53,7 @@ server:
     compression:
         enabled: true
         mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+        min-response-size: 1024
 
 # ===================================================================
 # JHipster specific properties
@@ -66,6 +67,10 @@ jhipster:
         timeToLiveSeconds: 3600
         ehcache:
             maxBytesLocalHeap: 256M
+    security:
+        rememberMe:
+            # security key (this key should be unique for your application, and kept secret)
+            key: 62227d4d159c4e6f364fe22307707385fd773e55
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: sampleNo18n@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
@@ -79,7 +84,7 @@ jhipster:
             host: localhost
             port: 2003
             prefix: sampleNo18n
-        logs: # report metrics in the logs
+        logs: # Reports Dropwizard metrics in the logs
             enabled: false
             reportFrequency: 60 # in seconds
     logging:

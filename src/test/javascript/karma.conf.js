@@ -24,6 +24,8 @@ module.exports = function (config) {
         files: [
             // bower:js
             'src/main/webapp/bower_components/jquery/dist/jquery.js',
+            'src/main/webapp/bower_components/json3/lib/json3.js',
+            'src/main/webapp/bower_components/messageformat/messageformat.js',
             'src/main/webapp/bower_components/angular/angular.js',
             'src/main/webapp/bower_components/angular-aria/angular-aria.js',
             'src/main/webapp/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
@@ -35,8 +37,6 @@ module.exports = function (config) {
             'src/main/webapp/bower_components/angular-sanitize/angular-sanitize.js',
             'src/main/webapp/bower_components/angular-ui-router/release/angular-ui-router.js',
             'src/main/webapp/bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js',
-            'src/main/webapp/bower_components/json3/lib/json3.js',
-            'src/main/webapp/bower_components/messageformat/messageformat.js',
             'src/main/webapp/bower_components/ng-file-upload/ng-file-upload.js',
             'src/main/webapp/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'src/main/webapp/bower_components/angular-mocks/angular-mocks.js',
