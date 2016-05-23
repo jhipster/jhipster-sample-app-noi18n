@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .constant('paginationConstants', {
             'itemsPerPage': 20
         });

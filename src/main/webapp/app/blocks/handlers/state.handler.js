@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .factory('stateHandler', stateHandler);
 
     stateHandler.$inject = ['$rootScope', '$state', '$sessionStorage',  '$window',
@@ -36,7 +36,7 @@
             });
 
             var stateChangeSuccess = $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
-                var titleKey = 'sampleNo18n' ;
+                var titleKey = 'jhipsterNoI18nSampleApplication' ;
 
                 // Set the page title key to the one configured in state or use default one
                 if (toState.data.pageTitle) {

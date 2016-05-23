@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .controller('UserManagementController', UserManagementController);
 
     UserManagementController.$inject = ['Principal', 'User', 'ParseLinks', 'paginationConstants'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .controller('BankAccountDialogController', BankAccountDialogController);
 
     BankAccountDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'BankAccount', 'User', 'Operation'];
@@ -18,7 +18,7 @@
         });
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleNo18NApp:bankAccountUpdate', result);
+            $scope.$emit('jhipsterNoI18NSampleApplicationApp:bankAccountUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         };

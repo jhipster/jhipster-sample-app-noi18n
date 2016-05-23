@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .controller('LabelController', LabelController);
 
     LabelController.$inject = ['$scope', '$state', 'Label'];

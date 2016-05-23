@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .factory('errorHandlerInterceptor', errorHandlerInterceptor);
 
     errorHandlerInterceptor.$inject = ['$q', '$rootScope'];
@@ -16,7 +16,7 @@
 
         function responseError (response) {
             if (!(response.status === 401 && (response.data === '' || (response.data.path && response.data.path.indexOf('/api/account') === 0 )))) {
-                $rootScope.$emit('sampleNo18NApp.httpError', response);
+                $rootScope.$emit('jhipsterNoI18NSampleApplicationApp.httpError', response);
             }
             return $q.reject(response);
         }

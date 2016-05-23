@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .factory('notificationInterceptor', notificationInterceptor);
 
     notificationInterceptor.$inject = ['$q', 'AlertService'];
@@ -15,9 +15,9 @@
         return service;
 
         function response (response) {
-            var alertKey = response.headers('X-sampleNo18NApp-alert');
+            var alertKey = response.headers('X-jhipsterNoI18NSampleApplicationApp-alert');
             if (angular.isString(alertKey)) {
-                AlertService.success(alertKey, { param : response.headers('X-sampleNo18NApp-params')});
+                AlertService.success(alertKey, { param : response.headers('X-jhipsterNoI18NSampleApplicationApp-params')});
             }
             return response;
         }

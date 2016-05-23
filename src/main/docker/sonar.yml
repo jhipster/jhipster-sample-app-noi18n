@@ -1,8 +1,8 @@
 version: '2'
 services:
-    sampleno18n-sonar:
-        container_name: sampleno18n-sonar
-        image: sonarqube:5.3
+    jhipsternoi18nsampleapplication-sonar:
+        container_name: jhipsternoi18nsampleapplication-sonar
+        image: sonarqube:5.5-alpine
         ports:
             - 9000:9000
             - 9092:9092

@@ -11,7 +11,7 @@
     };
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .component('jhiAlertError', jhiAlertError);
 
     jhiAlertErrorController.$inject = ['$scope', 'AlertService', '$rootScope'];
@@ -36,7 +36,7 @@
             );
         }
 
-        var cleanHttpErrorListener = $rootScope.$on('sampleNo18NApp.httpError', function (event, httpResponse) {
+        var cleanHttpErrorListener = $rootScope.$on('jhipsterNoI18NSampleApplicationApp.httpError', function (event, httpResponse) {
             var i;
             event.stopPropagation();
             switch (httpResponse.status) {
@@ -46,8 +46,8 @@
                 break;
 
             case 400:
-                var errorHeader = httpResponse.headers('X-sampleNo18NApp-error');
-                var entityKey = httpResponse.headers('X-sampleNo18NApp-params');
+                var errorHeader = httpResponse.headers('X-jhipsterNoI18NSampleApplicationApp-error');
+                var entityKey = httpResponse.headers('X-jhipsterNoI18NSampleApplicationApp-params');
                 if (errorHeader) {
                     var entityName = entityKey;
                     addErrorAlert(errorHeader, errorHeader, {entityName: entityName});

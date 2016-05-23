@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .factory('ProfileService', ProfileService);
 
     ProfileService.$inject = ['$q', '$http'];

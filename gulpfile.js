@@ -1,4 +1,4 @@
-// Generated on 2016-05-13 using generator-jhipster 3.3.0
+// Generated on 2016-05-23 using generator-jhipster 3.3.0
 'use strict';
 
 var gulp = require('gulp'),
@@ -147,7 +147,7 @@ gulp.task('html', function () {
     return gulp.src(config.app + 'app/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(templateCache({
-            module: 'sampleNo18NApp',
+            module: 'jhipsterNoI18NSampleApplicationApp',
             root: 'app/',
             moduleSystem: 'IIFE'
         }))
@@ -156,7 +156,7 @@ gulp.task('html', function () {
 
 gulp.task('ngconstant:dev', function () {
     return ngConstant({
-        name: 'sampleNo18NApp',
+        name: 'jhipsterNoI18NSampleApplicationApp',
         constants: {
             VERSION: util.parseVersion(),
             DEBUG_INFO_ENABLED: true
@@ -170,7 +170,7 @@ gulp.task('ngconstant:dev', function () {
 
 gulp.task('ngconstant:prod', function () {
     return ngConstant({
-        name: 'sampleNo18NApp',
+        name: 'jhipsterNoI18NSampleApplicationApp',
         constants: {
             VERSION: util.parseVersion(),
             DEBUG_INFO_ENABLED: false

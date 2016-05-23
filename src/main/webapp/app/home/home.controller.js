@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .controller('HomeController', HomeController);
 
     HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];

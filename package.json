@@ -1,7 +1,7 @@
 {
-  "name": "sample-no-18-n",
+  "name": "jhipster-no-i-18-n-sample-application",
   "version": "0.0.0",
-  "description": "Description for sampleNo18n",
+  "description": "Description for jhipsterNoI18nSampleApplication",
   "private": true,
   "cacheDirectories": [
     "node_modules",

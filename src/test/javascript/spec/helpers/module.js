@@ -1,4 +1,4 @@
-beforeEach(module('sampleNo18NApp'));
+beforeEach(module('jhipsterNoI18NSampleApplicationApp'));
 /**
  * returns a function whose angular will be replaced
  * with whatever mock was supplied.

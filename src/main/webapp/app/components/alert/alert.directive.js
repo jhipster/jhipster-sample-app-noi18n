@@ -11,7 +11,7 @@
     };
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .component('jhiAlert', jhiAlert);
 
     jhiAlertController.$inject = ['$scope', 'AlertService'];

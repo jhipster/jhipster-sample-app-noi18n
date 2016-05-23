@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .config(compileServiceConfig);
 
     compileServiceConfig.$inject = ['$compileProvider','DEBUG_INFO_ENABLED'];

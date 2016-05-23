@@ -14,6 +14,6 @@
     };
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .component('jhiItemCount', jhiItemCount);
 })();

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .controller('LabelDialogController', LabelDialogController);
 
     LabelDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Label', 'Operation'];
@@ -17,7 +17,7 @@
         });
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleNo18NApp:labelUpdate', result);
+            $scope.$emit('jhipsterNoI18NSampleApplicationApp:labelUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         };

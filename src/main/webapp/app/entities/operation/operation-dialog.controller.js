@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('sampleNo18NApp')
+        .module('jhipsterNoI18NSampleApplicationApp')
         .controller('OperationDialogController', OperationDialogController);
 
     OperationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Operation', 'BankAccount', 'Label'];
@@ -18,7 +18,7 @@
         });
 
         var onSaveSuccess = function (result) {
-            $scope.$emit('sampleNo18NApp:operationUpdate', result);
+            $scope.$emit('jhipsterNoI18NSampleApplicationApp:operationUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         };

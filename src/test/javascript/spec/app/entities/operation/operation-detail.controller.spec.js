@@ -32,7 +32,7 @@ describe('Controller Tests', function() {
 
         describe('Root Scope Listening', function() {
             it('Unregisters root scope listener upon scope destruction', function() {
-                var eventType = 'sampleNo18NApp:operationUpdate';
+                var eventType = 'jhipsterNoI18NSampleApplicationApp:operationUpdate';
 
                 createController();
                 expect($rootScope.$$listenerCount[eventType]).toEqual(1);
