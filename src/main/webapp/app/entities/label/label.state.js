@@ -42,7 +42,7 @@
             },
             resolve: {
                 entity: ['$stateParams', 'Label', function($stateParams, Label) {
-                    return Label.get({id : $stateParams.id});
+                    return Label.get({id : $stateParams.id}).$promise;
                 }]
             }
         })
@@ -89,7 +89,7 @@
                     size: 'lg',
                     resolve: {
                         entity: ['Label', function(Label) {
-                            return Label.get({id : $stateParams.id});
+                            return Label.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
@@ -113,7 +113,7 @@
                     size: 'md',
                     resolve: {
                         entity: ['Label', function(Label) {
-                            return Label.get({id : $stateParams.id});
+                            return Label.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {

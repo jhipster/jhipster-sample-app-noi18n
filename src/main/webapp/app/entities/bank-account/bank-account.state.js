@@ -42,7 +42,7 @@
             },
             resolve: {
                 entity: ['$stateParams', 'BankAccount', function($stateParams, BankAccount) {
-                    return BankAccount.get({id : $stateParams.id});
+                    return BankAccount.get({id : $stateParams.id}).$promise;
                 }]
             }
         })
@@ -90,7 +90,7 @@
                     size: 'lg',
                     resolve: {
                         entity: ['BankAccount', function(BankAccount) {
-                            return BankAccount.get({id : $stateParams.id});
+                            return BankAccount.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
@@ -114,7 +114,7 @@
                     size: 'md',
                     resolve: {
                         entity: ['BankAccount', function(BankAccount) {
-                            return BankAccount.get({id : $stateParams.id});
+                            return BankAccount.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
