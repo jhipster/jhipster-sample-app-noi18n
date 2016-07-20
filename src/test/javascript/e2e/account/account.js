@@ -21,8 +21,7 @@ describe('account', function () {
         password.sendKeys('foo');
         element(by.css('button[type=submit]')).click();
 
-        var error = $('.alert-danger').getText();
-        expect(error).toMatch(/Failed to sign in!/);
+        expect(element(by.css('.alert-danger')).getText()).toMatch(/Failed to sign in!/);
     });
 
     it('should login successfully with admin account', function () {
@@ -42,8 +41,7 @@ describe('account', function () {
         expect(element(by.css('h2')).getText()).toMatch(/User settings for \[admin\]/);
         element(by.css('button[type=submit]')).click();
 
-        var message = $('.alert-success').getText();
-        expect(message).toMatch(/Settings saved!/);
+        expect(element(by.css('.alert-success')).getText()).toMatch(/Settings saved!/);
     });
 
     it('should be able to update password', function () {
@@ -55,8 +53,7 @@ describe('account', function () {
         element(by.id('confirmPassword')).sendKeys('newpassword');
         element(by.css('button[type=submit]')).click();
 
-        var message = $('.alert-success').getText();
-        expect(message).toMatch(/Password changed!/);
+        expect(element(by.css('.alert-success')).getText()).toMatch(/Password changed!/);
         accountMenu.click();
         logout.click();
 
