@@ -22,7 +22,7 @@ describe('Label e2e test', function () {
 
     it('should load Labels', function () {
         entityMenu.click();
-        element(by.css('[ui-sref="label"]')).click().then(function() {
+        element.all(by.css('[ui-sref="label"]')).first().click().then(function() {
             expect(element.all(by.css('h2')).first().getText()).toMatch(/Labels/);
         });
     });

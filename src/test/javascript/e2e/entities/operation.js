@@ -22,7 +22,7 @@ describe('Operation e2e test', function () {
 
     it('should load Operations', function () {
         entityMenu.click();
-        element(by.css('[ui-sref="operation"]')).click().then(function() {
+        element.all(by.css('[ui-sref="operation"]')).first().click().then(function() {
             expect(element.all(by.css('h2')).first().getText()).toMatch(/Operations/);
         });
     });

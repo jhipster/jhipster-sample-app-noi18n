@@ -22,7 +22,7 @@ describe('BankAccount e2e test', function () {
 
     it('should load BankAccounts', function () {
         entityMenu.click();
-        element(by.css('[ui-sref="bank-account"]')).click().then(function() {
+        element.all(by.css('[ui-sref="bank-account"]')).first().click().then(function() {
             expect(element.all(by.css('h2')).first().getText()).toMatch(/Bank Accounts/);
         });
     });
