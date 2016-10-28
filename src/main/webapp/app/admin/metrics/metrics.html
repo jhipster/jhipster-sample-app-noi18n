@@ -181,7 +181,6 @@
                 <th class="text-right">Hits</th>
                 <th class="text-right">Misses</th>
                 <th class="text-right">Eviction count</th>
-                <th class="text-right">Mean get time (ms)</th>
             </tr>
             </thead>
             <tbody>
@@ -191,7 +190,6 @@
                 <td class="text-right">{{vm.metrics.gauges[k + '.hits'].value}}</td>
                 <td class="text-right">{{vm.metrics.gauges[k + '.misses'].value}}</td>
                 <td class="text-right">{{vm.metrics.gauges[k + '.eviction-count'].value}}</td>
-                <td class="text-right">{{vm.metrics.gauges[k + '.mean-get-time'].value | number:2}}</td>
             </tr>
             </tbody>
         </table>
