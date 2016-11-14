@@ -3,7 +3,7 @@
 
     angular
         .module('jhipsterNoI18NSampleApplicationApp', [
-            'ngStorage', 
+            'ngStorage',
             'ngResource',
             'ngCookies',
             'ngAria',

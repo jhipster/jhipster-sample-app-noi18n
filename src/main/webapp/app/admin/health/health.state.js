@@ -13,7 +13,7 @@
             url: '/health',
             data: {
                 authorities: ['ROLE_ADMIN'],
-                pageTitle: 'jhipsterNoI18nSampleApplication'
+                pageTitle: 'Health Checks'
             },
             views: {
                 'content@': {
