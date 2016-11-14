@@ -70,12 +70,9 @@ jhipster:
             key: 62227d4d159c4e6f364fe22307707385fd773e55
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: jhipsterNoI18nSampleApplication@localhost
+        baseUrl: # keep empty to use the server's default URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
-        spark:
-            enabled: false
-            host: localhost
-            port: 9999
         graphite:
             enabled: false
             host: localhost
