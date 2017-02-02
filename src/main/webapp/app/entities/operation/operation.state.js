@@ -27,7 +27,7 @@
             }
         })
         .state('operation-detail', {
-            parent: 'entity',
+            parent: 'operation',
             url: '/operation/{id}',
             data: {
                 authorities: ['ROLE_USER'],

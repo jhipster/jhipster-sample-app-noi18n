@@ -3,7 +3,7 @@
     <h2><span>Operation</span> {{vm.operation.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
-    <dl class="dl-horizontal jh-entity-details">
+    <dl class="row jh-entity-details">
         <dt><span>Date</span></dt>
         <dd>
             <span>{{vm.operation.date | date:'medium'}}</span>
@@ -36,6 +36,6 @@
 
     <button type="button" ui-sref="operation-detail.edit({id:vm.operation.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
+        <span class="hidden-sm-down"> Edit</span>
     </button>
 </div>
