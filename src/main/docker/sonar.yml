@@ -1,7 +1,6 @@
 version: '2'
 services:
     jhipsternoi18nsampleapplication-sonar:
-        container_name: jhipsternoi18nsampleapplication-sonar
         image: sonarqube:6.2-alpine
         ports:
             - 9000:9000
