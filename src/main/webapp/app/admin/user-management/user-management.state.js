@@ -97,7 +97,7 @@
         })
         .state('user-management-detail', {
             parent: 'user-management',
-            url: '/user/{login}',
+            url: '/{login}',
             data: {
                 authorities: ['ROLE_ADMIN'],
                 pageTitle: 'jhipsterNoI18nSampleApplication'
