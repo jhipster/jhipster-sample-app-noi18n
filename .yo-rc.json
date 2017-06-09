@@ -20,7 +20,7 @@
       "protractor"
     ],
     "serverPort": 8080,
-    "jhipsterVersion": "4.5.0",
+    "jhipsterVersion": "4.5.3",
     "enableSocialSignIn": false,
     "rememberMeKey": "62227d4d159c4e6f364fe22307707385fd773e55",
     "useSass": false,
