@@ -21,40 +21,40 @@ import { StateStorageService } from 'app/core/auth/state-storage.service';
 import { JhiMainComponent, NavbarComponent, FooterComponent, ProfileService, PageRibbonComponent, ErrorComponent } from './layouts';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    JhipsterNoI18NSampleApplicationAppRoutingModule,
-    Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
-    JhipsterNoI18NSampleApplicationSharedModule,
-    JhipsterNoI18NSampleApplicationCoreModule,
-    JhipsterNoI18NSampleApplicationHomeModule,
-    JhipsterNoI18NSampleApplicationAccountModule,
-    JhipsterNoI18NSampleApplicationEntityModule
-    // jhipster-needle-angular-add-module JHipster will add new module here
-  ],
-  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
-  providers: [
-    ProfileService,
-    PaginationConfig,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthExpiredInterceptor,
-      multi: true,
-      deps: [StateStorageService, Injector]
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorHandlerInterceptor,
-      multi: true,
-      deps: [JhiEventManager]
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: NotificationInterceptor,
-      multi: true,
-      deps: [Injector]
-    }
-  ],
-  bootstrap: [JhiMainComponent]
+    imports: [
+        BrowserModule,
+        JhipsterNoI18NSampleApplicationAppRoutingModule,
+        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
+        JhipsterNoI18NSampleApplicationSharedModule,
+        JhipsterNoI18NSampleApplicationCoreModule,
+        JhipsterNoI18NSampleApplicationHomeModule,
+        JhipsterNoI18NSampleApplicationAccountModule,
+        JhipsterNoI18NSampleApplicationEntityModule
+        // jhipster-needle-angular-add-module JHipster will add new module here
+    ],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+    providers: [
+        ProfileService,
+        PaginationConfig,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthExpiredInterceptor,
+            multi: true,
+            deps: [StateStorageService, Injector]
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorHandlerInterceptor,
+            multi: true,
+            deps: [JhiEventManager]
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: NotificationInterceptor,
+            multi: true,
+            deps: [Injector]
+        }
+    ],
+    bootstrap: [JhiMainComponent]
 })
 export class JhipsterNoI18NSampleApplicationAppModule {}
