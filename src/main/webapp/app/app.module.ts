@@ -15,10 +15,9 @@ import { JhipsterNoI18NSampleApplicationAppRoutingModule } from './app-routing.m
 import { JhipsterNoI18NSampleApplicationHomeModule } from './home/home.module';
 import { JhipsterNoI18NSampleApplicationAccountModule } from './account/account.module';
 import { JhipsterNoI18NSampleApplicationEntityModule } from './entities/entity.module';
-import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, ProfileService, PageRibbonComponent, ErrorComponent } from './layouts';
+import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 
 @NgModule({
     imports: [
@@ -34,8 +33,6 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, ProfileService, Pag
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
     providers: [
-        ProfileService,
-        PaginationConfig,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthExpiredInterceptor,

@@ -5,7 +5,6 @@ import { JhipsterNoI18NSampleApplicationSharedLibsModule, JhiAlertComponent, Jhi
 @NgModule({
     imports: [JhipsterNoI18NSampleApplicationSharedLibsModule],
     declarations: [JhiAlertComponent, JhiAlertErrorComponent],
-    providers: [],
     exports: [JhipsterNoI18NSampleApplicationSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
 })
 export class JhipsterNoI18NSampleApplicationSharedCommonModule {}
