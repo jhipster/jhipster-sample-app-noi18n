@@ -21,44 +21,44 @@ import * as moment from 'moment';
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    JhipsterNoI18NSampleApplicationAppRoutingModule,
-    Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
-    NgJhipsterModule.forRoot({
-      // set below to true to make alerts look like toast
-      alertAsToast: false,
-      alertTimeout: 5000
-    }),
-    JhipsterNoI18NSampleApplicationSharedModule.forRoot(),
-    JhipsterNoI18NSampleApplicationCoreModule,
-    JhipsterNoI18NSampleApplicationHomeModule,
-    JhipsterNoI18NSampleApplicationAccountModule,
-    // jhipster-needle-angular-add-module JHipster will add new module here
-    JhipsterNoI18NSampleApplicationEntityModule
-  ],
-  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthExpiredInterceptor,
-      multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorHandlerInterceptor,
-      multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: NotificationInterceptor,
-      multi: true
-    }
-  ],
-  bootstrap: [JhiMainComponent]
+    imports: [
+        BrowserModule,
+        JhipsterNoI18NSampleApplicationAppRoutingModule,
+        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
+        NgJhipsterModule.forRoot({
+            // set below to true to make alerts look like toast
+            alertAsToast: false,
+            alertTimeout: 5000
+        }),
+        JhipsterNoI18NSampleApplicationSharedModule.forRoot(),
+        JhipsterNoI18NSampleApplicationCoreModule,
+        JhipsterNoI18NSampleApplicationHomeModule,
+        JhipsterNoI18NSampleApplicationAccountModule,
+        // jhipster-needle-angular-add-module JHipster will add new module here
+        JhipsterNoI18NSampleApplicationEntityModule
+    ],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthExpiredInterceptor,
+            multi: true
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorHandlerInterceptor,
+            multi: true
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: NotificationInterceptor,
+            multi: true
+        }
+    ],
+    bootstrap: [JhiMainComponent]
 })
 export class JhipsterNoI18NSampleApplicationAppModule {
-  constructor(private dpConfig: NgbDatepickerConfig) {
-    this.dpConfig.minDate = { year: moment().year() - 100, month: 1, day: 1 };
-  }
+    constructor(private dpConfig: NgbDatepickerConfig) {
+        this.dpConfig.minDate = { year: moment().year() - 100, month: 1, day: 1 };
+    }
 }
