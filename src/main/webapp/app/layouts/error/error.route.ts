@@ -19,5 +19,18 @@ export const errorRoute: Routes = [
             pageTitle: 'jhipsterNoI18nSampleApplication',
             error403: true
         }
+    },
+    {
+        path: '404',
+        component: ErrorComponent,
+        data: {
+            authorities: [],
+            pageTitle: 'jhipsterNoI18nSampleApplication',
+            error404: true
+        }
+    },
+    {
+        path: '**',
+        redirectTo: '/404'
     }
 ];
