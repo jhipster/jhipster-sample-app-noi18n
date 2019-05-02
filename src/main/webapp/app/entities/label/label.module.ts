@@ -3,21 +3,21 @@ import { RouterModule } from '@angular/router';
 
 import { JhipsterNoI18NSampleApplicationSharedModule } from 'app/shared';
 import {
-    LabelComponent,
-    LabelDetailComponent,
-    LabelUpdateComponent,
-    LabelDeletePopupComponent,
-    LabelDeleteDialogComponent,
-    labelRoute,
-    labelPopupRoute
+  LabelComponent,
+  LabelDetailComponent,
+  LabelUpdateComponent,
+  LabelDeletePopupComponent,
+  LabelDeleteDialogComponent,
+  labelRoute,
+  labelPopupRoute
 } from './';
 
 const ENTITY_STATES = [...labelRoute, ...labelPopupRoute];
 
 @NgModule({
-    imports: [JhipsterNoI18NSampleApplicationSharedModule, RouterModule.forChild(ENTITY_STATES)],
-    declarations: [LabelComponent, LabelDetailComponent, LabelUpdateComponent, LabelDeleteDialogComponent, LabelDeletePopupComponent],
-    entryComponents: [LabelComponent, LabelUpdateComponent, LabelDeleteDialogComponent, LabelDeletePopupComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [JhipsterNoI18NSampleApplicationSharedModule, RouterModule.forChild(ENTITY_STATES)],
+  declarations: [LabelComponent, LabelDetailComponent, LabelUpdateComponent, LabelDeleteDialogComponent, LabelDeletePopupComponent],
+  entryComponents: [LabelComponent, LabelUpdateComponent, LabelDeleteDialogComponent, LabelDeletePopupComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JhipsterNoI18NSampleApplicationLabelModule {}

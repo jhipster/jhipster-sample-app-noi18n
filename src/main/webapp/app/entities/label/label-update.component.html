@@ -1,25 +1,25 @@
 <div class="row justify-content-center">
     <div class="col-8">
-        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
             <h2 id="jhi-label-heading">Create or edit a Label</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!label.id">
                     <label for="id">ID</label>
-                    <input type="text" class="form-control" id="id" name="id"
-                        [(ngModel)]="label.id" readonly />
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_label">Label</label>
                     <input type="text" class="form-control" name="label" id="field_label"
-                        [(ngModel)]="label.label" required minlength="3"/>
-                    <div [hidden]="!(editForm.controls.label?.dirty && editForm.controls.label?.invalid)">
+                           formControlName="label"/>
+                    <div *ngIf="editForm.get('label').invalid && (editForm.get('label').dirty || editForm.get('label').touched)">
                         <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.label?.errors?.required">
+                               *ngIf="editForm.get('label').errors.required">
                         This field is required.
                         </small>
                         <small class="form-text text-danger"
-                        [hidden]="!editForm.controls.label?.errors?.minlength">
+                               *ngIf="editForm.get('label').errors.minlength">
                         This field is required to be at least 3 characters.
                         </small>
                     </div>
@@ -30,7 +30,7 @@
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
                 </button>
-                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
                 </button>
             </div>

@@ -20,10 +20,10 @@
       "protractor"
     ],
     "serverPort": 8080,
-    "jhipsterVersion": "5.8.2",
+    "jhipsterVersion": "6.0.0",
     "enableSocialSignIn": false,
     "rememberMeKey": "62227d4d159c4e6f364fe22307707385fd773e55",
-    "useSass": false,
+    "useSass": true,
     "jhiPrefix": "jhi",
     "messageBroker": false,
     "serviceDiscoveryType": false,
@@ -34,6 +34,7 @@
     "reactive": false,
     "otherModules": [],
     "entitySuffix": "",
-    "dtoSuffix": "DTO"
+    "dtoSuffix": "DTO",
+    "clientTheme": "none"
   }
 }
