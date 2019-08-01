@@ -6,15 +6,15 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'bank-account',
-        loadChildren: './bank-account/bank-account.module#JhipsterNoI18NSampleApplicationBankAccountModule'
+        loadChildren: () => import('./bank-account/bank-account.module').then(m => m.JhipsterNoI18NSampleApplicationBankAccountModule)
       },
       {
         path: 'label',
-        loadChildren: './label/label.module#JhipsterNoI18NSampleApplicationLabelModule'
+        loadChildren: () => import('./label/label.module').then(m => m.JhipsterNoI18NSampleApplicationLabelModule)
       },
       {
         path: 'operation',
-        loadChildren: './operation/operation.module#JhipsterNoI18NSampleApplicationOperationModule'
+        loadChildren: () => import('./operation/operation.module').then(m => m.JhipsterNoI18NSampleApplicationOperationModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

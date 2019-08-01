@@ -20,7 +20,7 @@
       "protractor"
     ],
     "serverPort": 8080,
-    "jhipsterVersion": "6.1.2",
+    "jhipsterVersion": "6.2.0",
     "enableSocialSignIn": false,
     "rememberMeKey": "62227d4d159c4e6f364fe22307707385fd773e55",
     "useSass": true,
@@ -35,6 +35,7 @@
     "otherModules": [],
     "entitySuffix": "",
     "dtoSuffix": "DTO",
-    "clientTheme": "none"
+    "clientTheme": "none",
+    "blueprints": []
   }
 }
