@@ -1,16 +1,12 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { JhipsterNoI18NSampleApplicationSharedModule } from 'app/shared';
-import {
-  OperationComponent,
-  OperationDetailComponent,
-  OperationUpdateComponent,
-  OperationDeletePopupComponent,
-  OperationDeleteDialogComponent,
-  operationRoute,
-  operationPopupRoute
-} from './';
+import { JhipsterNoI18NSampleApplicationSharedModule } from 'app/shared/shared.module';
+import { OperationComponent } from './operation.component';
+import { OperationDetailComponent } from './operation-detail.component';
+import { OperationUpdateComponent } from './operation-update.component';
+import { OperationDeletePopupComponent, OperationDeleteDialogComponent } from './operation-delete-dialog.component';
+import { operationRoute, operationPopupRoute } from './operation.route';
 
 const ENTITY_STATES = [...operationRoute, ...operationPopupRoute];
 
@@ -23,7 +19,6 @@ const ENTITY_STATES = [...operationRoute, ...operationPopupRoute];
     OperationDeleteDialogComponent,
     OperationDeletePopupComponent
   ],
-  entryComponents: [OperationComponent, OperationUpdateComponent, OperationDeleteDialogComponent, OperationDeletePopupComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  entryComponents: [OperationComponent, OperationUpdateComponent, OperationDeleteDialogComponent, OperationDeletePopupComponent]
 })
 export class JhipsterNoI18NSampleApplicationOperationModule {}

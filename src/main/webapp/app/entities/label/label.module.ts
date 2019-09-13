@@ -1,23 +1,18 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { JhipsterNoI18NSampleApplicationSharedModule } from 'app/shared';
-import {
-  LabelComponent,
-  LabelDetailComponent,
-  LabelUpdateComponent,
-  LabelDeletePopupComponent,
-  LabelDeleteDialogComponent,
-  labelRoute,
-  labelPopupRoute
-} from './';
+import { JhipsterNoI18NSampleApplicationSharedModule } from 'app/shared/shared.module';
+import { LabelComponent } from './label.component';
+import { LabelDetailComponent } from './label-detail.component';
+import { LabelUpdateComponent } from './label-update.component';
+import { LabelDeletePopupComponent, LabelDeleteDialogComponent } from './label-delete-dialog.component';
+import { labelRoute, labelPopupRoute } from './label.route';
 
 const ENTITY_STATES = [...labelRoute, ...labelPopupRoute];
 
 @NgModule({
   imports: [JhipsterNoI18NSampleApplicationSharedModule, RouterModule.forChild(ENTITY_STATES)],
   declarations: [LabelComponent, LabelDetailComponent, LabelUpdateComponent, LabelDeleteDialogComponent, LabelDeletePopupComponent],
-  entryComponents: [LabelComponent, LabelUpdateComponent, LabelDeleteDialogComponent, LabelDeletePopupComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  entryComponents: [LabelComponent, LabelUpdateComponent, LabelDeleteDialogComponent, LabelDeletePopupComponent]
 })
 export class JhipsterNoI18NSampleApplicationLabelModule {}
