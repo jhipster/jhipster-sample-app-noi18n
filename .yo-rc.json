@@ -17,7 +17,7 @@
     "applicationType": "monolith",
     "testFrameworks": ["gatling", "protractor"],
     "serverPort": 8080,
-    "jhipsterVersion": "6.3.0",
+    "jhipsterVersion": "6.3.1",
     "enableSocialSignIn": false,
     "rememberMeKey": "62227d4d159c4e6f364fe22307707385fd773e55",
     "useSass": true,
