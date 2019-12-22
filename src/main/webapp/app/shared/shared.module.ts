@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { JhipsterNoI18NSampleApplicationSharedLibsModule } from './shared-libs.module';
-import { JhiAlertComponent } from './alert/alert.component';
-import { JhiAlertErrorComponent } from './alert/alert-error.component';
-import { JhiLoginModalComponent } from './login/login.component';
+import { AlertComponent } from './alert/alert.component';
+import { AlertErrorComponent } from './alert/alert-error.component';
+import { LoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
 @NgModule({
   imports: [JhipsterNoI18NSampleApplicationSharedLibsModule],
-  declarations: [JhiAlertComponent, JhiAlertErrorComponent, JhiLoginModalComponent, HasAnyAuthorityDirective],
-  entryComponents: [JhiLoginModalComponent],
+  declarations: [AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
+  entryComponents: [LoginModalComponent],
   exports: [
     JhipsterNoI18NSampleApplicationSharedLibsModule,
-    JhiAlertComponent,
-    JhiAlertErrorComponent,
-    JhiLoginModalComponent,
+    AlertComponent,
+    AlertErrorComponent,
+    LoginModalComponent,
     HasAnyAuthorityDirective
   ]
 })

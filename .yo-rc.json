@@ -17,7 +17,7 @@
     "applicationType": "monolith",
     "testFrameworks": ["gatling", "protractor"],
     "serverPort": 8080,
-    "jhipsterVersion": "6.5.1",
+    "jhipsterVersion": "6.6.0",
     "enableSocialSignIn": false,
     "rememberMeKey": "62227d4d159c4e6f364fe22307707385fd773e55",
     "useSass": true,
@@ -34,6 +34,7 @@
     "dtoSuffix": "DTO",
     "clientTheme": "none",
     "blueprints": [],
-    "embeddableLaunchScript": false
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1577001470150
   }
 }

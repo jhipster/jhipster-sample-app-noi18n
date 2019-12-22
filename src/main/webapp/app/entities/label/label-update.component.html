@@ -4,7 +4,7 @@
             <h2 id="jhi-label-heading">Create or edit a Label</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
-                <div class="form-group" [hidden]="!editForm.get('id').value">
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
                     <label for="id">ID</label>
                     <input type="text" class="form-control" id="id" name="id" formControlName="id"
                         readonly />
@@ -13,13 +13,13 @@
                     <label class="form-control-label" for="field_label">Label</label>
                     <input type="text" class="form-control" name="label" id="field_label"
                            formControlName="label"/>
-                    <div *ngIf="editForm.get('label').invalid && (editForm.get('label').dirty || editForm.get('label').touched)">
+                    <div *ngIf="editForm.get('label')!.invalid && (editForm.get('label')!.dirty || editForm.get('label')!.touched)">
                         <small class="form-text text-danger"
-                               *ngIf="editForm.get('label').errors.required">
+                               *ngIf="editForm.get('label')?.errors?.required">
                         This field is required.
                         </small>
                         <small class="form-text text-danger"
-                               *ngIf="editForm.get('label').errors.minlength">
+                               *ngIf="editForm.get('label')?.errors?.minlength">
                         This field is required to be at least 3 characters.
                         </small>
                     </div>
