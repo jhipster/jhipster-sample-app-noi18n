@@ -18,7 +18,7 @@ describe('Component Tests', () => {
       TestBed.configureTestingModule({
         imports: [JhipsterNoI18NSampleApplicationTestModule],
         declarations: [LabelUpdateComponent],
-        providers: [FormBuilder]
+        providers: [FormBuilder],
       })
         .overrideTemplate(LabelUpdateComponent, '')
         .compileComponents();

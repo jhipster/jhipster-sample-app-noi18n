@@ -22,9 +22,9 @@ import { ErrorComponent } from './layouts/error/error.component';
     JhipsterNoI18NSampleApplicationHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     JhipsterNoI18NSampleApplicationEntityModule,
-    JhipsterNoI18NSampleApplicationAppRoutingModule
+    JhipsterNoI18NSampleApplicationAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
-  bootstrap: [MainComponent]
+  bootstrap: [MainComponent],
 })
 export class JhipsterNoI18NSampleApplicationAppModule {}

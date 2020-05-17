@@ -9,7 +9,7 @@ export const sessionsRoute: Route = {
   component: SessionsComponent,
   data: {
     authorities: [Authority.USER],
-    pageTitle: 'Sessions'
+    pageTitle: 'Sessions',
   },
-  canActivate: [UserRouteAccessService]
+  canActivate: [UserRouteAccessService],
 };

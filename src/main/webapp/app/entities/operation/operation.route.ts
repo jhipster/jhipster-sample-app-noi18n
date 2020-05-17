@@ -40,44 +40,44 @@ export const operationRoute: Routes = [
     component: OperationComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'Operations'
+      pageTitle: 'Operations',
     },
-    canActivate: [UserRouteAccessService]
+    canActivate: [UserRouteAccessService],
   },
   {
     path: ':id/view',
     component: OperationDetailComponent,
     resolve: {
-      operation: OperationResolve
+      operation: OperationResolve,
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'Operations'
+      pageTitle: 'Operations',
     },
-    canActivate: [UserRouteAccessService]
+    canActivate: [UserRouteAccessService],
   },
   {
     path: 'new',
     component: OperationUpdateComponent,
     resolve: {
-      operation: OperationResolve
+      operation: OperationResolve,
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'Operations'
+      pageTitle: 'Operations',
     },
-    canActivate: [UserRouteAccessService]
+    canActivate: [UserRouteAccessService],
   },
   {
     path: ':id/edit',
     component: OperationUpdateComponent,
     resolve: {
-      operation: OperationResolve
+      operation: OperationResolve,
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'Operations'
+      pageTitle: 'Operations',
     },
-    canActivate: [UserRouteAccessService]
-  }
+    canActivate: [UserRouteAccessService],
+  },
 ];
