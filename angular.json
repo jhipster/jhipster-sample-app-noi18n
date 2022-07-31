@@ -98,7 +98,6 @@
       }
     }
   },
-  "defaultProject": "jhipster-no-i-18-n-sample-application",
   "cli": {
     "cache": {
       "enabled": true,
