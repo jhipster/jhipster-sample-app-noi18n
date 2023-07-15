@@ -1,18 +1,18 @@
 import { ILabel, NewLabel } from './label.model';
 
 export const sampleWithRequiredData: ILabel = {
-  id: 4361,
-  label: 'SUV Buckinghamshire',
+  id: 1429,
+  label: 'SUV Southeast',
 };
 
 export const sampleWithPartialData: ILabel = {
-  id: 9004,
-  label: 'Trigender ouch plum',
+  id: 2950,
+  label: 'Trigender romance plum',
 };
 
 export const sampleWithFullData: ILabel = {
-  id: 41601,
-  label: 'Strategist Reunion',
+  id: 13632,
+  label: 'Strategist Buckinghamshire',
 };
 
 export const sampleWithNewData: NewLabel = {
