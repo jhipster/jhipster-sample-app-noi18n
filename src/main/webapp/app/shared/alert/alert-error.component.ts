@@ -4,9 +4,9 @@ import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AlertError } from './alert-error.model';
 import { Alert, AlertService } from 'app/core/util/alert.service';
 import { EventManager, EventWithContent } from 'app/core/util/event-manager.service';
+import { AlertError } from './alert-error.model';
 
 @Component({
   standalone: true,
@@ -19,13 +19,16 @@ export class AlertErrorComponent implements OnDestroy {
   errorListener: Subscription;
   httpErrorListener: Subscription;
 
-  constructor(private alertService: AlertService, private eventManager: EventManager) {
+  constructor(
+    private alertService: AlertService,
+    private eventManager: EventManager,
+  ) {
     this.errorListener = eventManager.subscribe(
       'jhipsterNoI18NSampleApplicationApp.error',
       (response: EventWithContent<unknown> | string) => {
         const errorResponse = (response as EventWithContent<AlertError>).content;
         this.addErrorAlert(errorResponse.message);
-      }
+      },
     );
 
     this.httpErrorListener = eventManager.subscribe(
@@ -78,7 +81,7 @@ export class AlertErrorComponent implements OnDestroy {
               this.addErrorAlert(httpErrorResponse.error);
             }
         }
-      }
+      },
     );
   }
 
