@@ -15,7 +15,7 @@ describe('Label e2e test', () => {
   const labelPageUrlPattern = new RegExp('/label(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const labelSample = { label: 'smite' };
+  const labelSample = { label: 'jubilantly rush' };
 
   let label;
 
@@ -157,8 +157,8 @@ describe('Label e2e test', () => {
     });
 
     it('should create an instance of Label', () => {
-      cy.get(`[data-cy="label"]`).type('consequently qualified duh');
-      cy.get(`[data-cy="label"]`).should('have.value', 'consequently qualified duh');
+      cy.get(`[data-cy="label"]`).type('whenever menacing');
+      cy.get(`[data-cy="label"]`).should('have.value', 'whenever menacing');
 
       cy.get(entityCreateSaveButtonSelector).click();
 
