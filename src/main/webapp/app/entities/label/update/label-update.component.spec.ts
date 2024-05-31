@@ -49,10 +49,10 @@ describe('Label Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Operation query and add missing value', () => {
       const label: ILabel = { id: 456 };
-      const operations: IOperation[] = [{ id: 29709 }];
+      const operations: IOperation[] = [{ id: 3447 }];
       label.operations = operations;
 
-      const operationCollection: IOperation[] = [{ id: 22545 }];
+      const operationCollection: IOperation[] = [{ id: 19017 }];
       jest.spyOn(operationService, 'query').mockReturnValue(of(new HttpResponse({ body: operationCollection })));
       const additionalOperations = [...operations];
       const expectedCollection: IOperation[] = [...additionalOperations, ...operationCollection];
@@ -71,7 +71,7 @@ describe('Label Management Update Component', () => {
 
     it('Should update editForm', () => {
       const label: ILabel = { id: 456 };
-      const operation: IOperation = { id: 4528 };
+      const operation: IOperation = { id: 25850 };
       label.operations = [operation];
 
       activatedRoute.data = of({ label });
