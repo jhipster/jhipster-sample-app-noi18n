@@ -336,8 +336,6 @@ class OperationResourceIT {
         Operation partialUpdatedOperation = new Operation();
         partialUpdatedOperation.setId(operation.getId());
 
-        partialUpdatedOperation.description(UPDATED_DESCRIPTION);
-
         restOperationMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedOperation.getId())
