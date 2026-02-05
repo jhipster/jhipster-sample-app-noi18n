@@ -1,4 +1,5 @@
-import { HttpResponse, provideHttpClient } from '@angular/common/http';
+import { beforeEach, describe, expect, it, vitest } from 'vitest';
+import { HttpResponse } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
@@ -24,7 +25,6 @@ describe('Label Management Update Component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        provideHttpClient(),
         provideHttpClientTesting(),
         {
           provide: ActivatedRoute,
@@ -51,10 +51,10 @@ describe('Label Management Update Component', () => {
       label.operations = operations;
 
       const operationCollection: IOperation[] = [{ id: 13822 }];
-      jest.spyOn(operationService, 'query').mockReturnValue(of(new HttpResponse({ body: operationCollection })));
+      vitest.spyOn(operationService, 'query').mockReturnValue(of(new HttpResponse({ body: operationCollection })));
       const additionalOperations = [...operations];
       const expectedCollection: IOperation[] = [...additionalOperations, ...operationCollection];
-      jest.spyOn(operationService, 'addOperationToCollectionIfMissing').mockReturnValue(expectedCollection);
+      vitest.spyOn(operationService, 'addOperationToCollectionIfMissing').mockReturnValue(expectedCollection);
 
       activatedRoute.data = of({ label });
       comp.ngOnInit();
@@ -85,15 +85,15 @@ describe('Label Management Update Component', () => {
       // GIVEN
       const saveSubject = new Subject<HttpResponse<ILabel>>();
       const label = { id: 4199 };
-      jest.spyOn(labelFormService, 'getLabel').mockReturnValue(label);
-      jest.spyOn(labelService, 'update').mockReturnValue(saveSubject);
-      jest.spyOn(comp, 'previousState');
+      vitest.spyOn(labelFormService, 'getLabel').mockReturnValue(label);
+      vitest.spyOn(labelService, 'update').mockReturnValue(saveSubject);
+      vitest.spyOn(comp, 'previousState');
       activatedRoute.data = of({ label });
       comp.ngOnInit();
 
       // WHEN
       comp.save();
-      expect(comp.isSaving).toEqual(true);
+      expect(comp.isSaving()).toEqual(true);
       saveSubject.next(new HttpResponse({ body: label }));
       saveSubject.complete();
 
@@ -101,29 +101,29 @@ describe('Label Management Update Component', () => {
       expect(labelFormService.getLabel).toHaveBeenCalled();
       expect(comp.previousState).toHaveBeenCalled();
       expect(labelService.update).toHaveBeenCalledWith(expect.objectContaining(label));
-      expect(comp.isSaving).toEqual(false);
+      expect(comp.isSaving()).toEqual(false);
     });
 
     it('should call create service on save for new entity', () => {
       // GIVEN
       const saveSubject = new Subject<HttpResponse<ILabel>>();
       const label = { id: 4199 };
-      jest.spyOn(labelFormService, 'getLabel').mockReturnValue({ id: null });
-      jest.spyOn(labelService, 'create').mockReturnValue(saveSubject);
-      jest.spyOn(comp, 'previousState');
+      vitest.spyOn(labelFormService, 'getLabel').mockReturnValue({ id: null });
+      vitest.spyOn(labelService, 'create').mockReturnValue(saveSubject);
+      vitest.spyOn(comp, 'previousState');
       activatedRoute.data = of({ label: null });
       comp.ngOnInit();
 
       // WHEN
       comp.save();
-      expect(comp.isSaving).toEqual(true);
+      expect(comp.isSaving()).toEqual(true);
       saveSubject.next(new HttpResponse({ body: label }));
       saveSubject.complete();
 
       // THEN
       expect(labelFormService.getLabel).toHaveBeenCalled();
       expect(labelService.create).toHaveBeenCalled();
-      expect(comp.isSaving).toEqual(false);
+      expect(comp.isSaving()).toEqual(false);
       expect(comp.previousState).toHaveBeenCalled();
     });
 
@@ -131,19 +131,19 @@ describe('Label Management Update Component', () => {
       // GIVEN
       const saveSubject = new Subject<HttpResponse<ILabel>>();
       const label = { id: 4199 };
-      jest.spyOn(labelService, 'update').mockReturnValue(saveSubject);
-      jest.spyOn(comp, 'previousState');
+      vitest.spyOn(labelService, 'update').mockReturnValue(saveSubject);
+      vitest.spyOn(comp, 'previousState');
       activatedRoute.data = of({ label });
       comp.ngOnInit();
 
       // WHEN
       comp.save();
-      expect(comp.isSaving).toEqual(true);
+      expect(comp.isSaving()).toEqual(true);
       saveSubject.error('This is an error!');
 
       // THEN
       expect(labelService.update).toHaveBeenCalled();
-      expect(comp.isSaving).toEqual(false);
+      expect(comp.isSaving()).toEqual(false);
       expect(comp.previousState).not.toHaveBeenCalled();
     });
   });
@@ -153,7 +153,7 @@ describe('Label Management Update Component', () => {
       it('should forward to operationService', () => {
         const entity = { id: 13822 };
         const entity2 = { id: 5986 };
-        jest.spyOn(operationService, 'compareOperation');
+        vitest.spyOn(operationService, 'compareOperation');
         comp.compareOperation(entity, entity2);
         expect(operationService.compareOperation).toHaveBeenCalledWith(entity, entity2);
       });

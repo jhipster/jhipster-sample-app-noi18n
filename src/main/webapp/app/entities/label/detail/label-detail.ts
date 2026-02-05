@@ -1,13 +1,17 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import SharedModule from 'app/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { Alert } from 'app/shared/alert/alert';
+import { AlertError } from 'app/shared/alert/alert-error';
 import { ILabel } from '../label.model';
 
 @Component({
   selector: 'jhi-label-detail',
   templateUrl: './label-detail.html',
-  imports: [SharedModule, RouterLink],
+  imports: [FontAwesomeModule, NgbModule, Alert, AlertError, RouterLink],
 })
 export class LabelDetail {
   label = input<ILabel | null>(null);

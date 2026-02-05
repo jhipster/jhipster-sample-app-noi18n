@@ -3,6 +3,8 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 
@@ -10,7 +12,7 @@ import { IBankAccount } from 'app/entities/bank-account/bank-account.model';
 import { BankAccountService } from 'app/entities/bank-account/service/bank-account.service';
 import { ILabel } from 'app/entities/label/label.model';
 import { LabelService } from 'app/entities/label/service/label.service';
-import SharedModule from 'app/shared/shared.module';
+import { AlertError } from 'app/shared/alert/alert-error';
 import { IOperation } from '../operation.model';
 import { OperationService } from '../service/operation.service';
 
@@ -19,10 +21,10 @@ import { OperationFormGroup, OperationFormService } from './operation-form.servi
 @Component({
   selector: 'jhi-operation-update',
   templateUrl: './operation-update.html',
-  imports: [SharedModule, ReactiveFormsModule],
+  imports: [NgbModule, FontAwesomeModule, AlertError, ReactiveFormsModule],
 })
 export class OperationUpdate implements OnInit {
-  isSaving = false;
+  isSaving = signal(false);
   operation: IOperation | null = null;
 
   bankAccountsSharedCollection = signal<IBankAccount[]>([]);
@@ -57,7 +59,7 @@ export class OperationUpdate implements OnInit {
   }
 
   save(): void {
-    this.isSaving = true;
+    this.isSaving.set(true);
     const operation = this.operationFormService.getOperation(this.editForm);
     if (operation.id === null) {
       this.subscribeToSaveResponse(this.operationService.create(operation));
@@ -82,7 +84,7 @@ export class OperationUpdate implements OnInit {
   }
 
   protected onSaveFinalize(): void {
-    this.isSaving = false;
+    this.isSaving.set(false);
   }
 
   protected updateForm(operation: IOperation): void {
