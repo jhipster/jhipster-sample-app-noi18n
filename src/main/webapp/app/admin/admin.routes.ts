@@ -3,11 +3,6 @@ import { Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'user-management',
-    loadChildren: () => import('./user-management/user-management.route'),
-    title: 'Users',
-  },
-  {
     path: 'docs',
     loadComponent: () => import('./docs/docs'),
     title: 'API',

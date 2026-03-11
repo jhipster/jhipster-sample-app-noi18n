@@ -13,11 +13,17 @@ import {
 describe('Operation e2e test', () => {
   const operationPageUrl = '/operation';
   const operationPageUrlPattern = new RegExp('/operation(\\?.*)?$');
-  const username = Cypress.env('E2E_USERNAME') ?? 'user';
-  const password = Cypress.env('E2E_PASSWORD') ?? 'user';
+  let username: string;
+  let password: string;
   const operationSample = { date: '2015-08-04T18:17:34.367Z', amount: 26325.9 };
 
   let operation;
+
+  before(() => {
+    cy.credentials().then(credentials => {
+      ({ username, password } = credentials);
+    });
+  });
 
   beforeEach(() => {
     cy.login(username, password);

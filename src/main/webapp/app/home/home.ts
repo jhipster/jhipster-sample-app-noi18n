@@ -1,10 +1,6 @@
-import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-
-import { Account } from 'app/core/auth/account.model';
 import { AccountService } from 'app/core/auth/account.service';
 
 @Component({
@@ -13,27 +9,12 @@ import { AccountService } from 'app/core/auth/account.service';
   styleUrl: './home.scss',
   imports: [RouterLink],
 })
-export default class Home implements OnInit, OnDestroy {
-  account = signal<Account | null>(null);
+export default class Home {
+  public readonly account = inject(AccountService).account;
 
-  private readonly destroy$ = new Subject<void>();
-
-  private readonly accountService = inject(AccountService);
   private readonly router = inject(Router);
-
-  ngOnInit(): void {
-    this.accountService
-      .getAuthenticationState()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(account => this.account.set(account));
-  }
 
   login(): void {
     this.router.navigate(['/login']);
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 }

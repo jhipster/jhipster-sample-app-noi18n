@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap/modal';
 
 import { ITEM_DELETED_EVENT } from 'app/config/navigation.constants';
 import { AlertError } from 'app/shared/alert/alert-error';
@@ -16,8 +16,8 @@ import { OperationService } from '../service/operation.service';
 export class OperationDeleteDialog {
   operation?: IOperation;
 
-  protected operationService = inject(OperationService);
-  protected activeModal = inject(NgbActiveModal);
+  protected readonly operationService = inject(OperationService);
+  protected readonly activeModal = inject(NgbActiveModal);
 
   cancel(): void {
     this.activeModal.dismiss();

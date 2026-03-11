@@ -1,27 +1,27 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AlertError } from 'app/shared/alert/alert-error';
+import { AuthorityService } from '../../authority/service/authority.service';
 import { UserManagementService } from '../service/user-management.service';
-import { IUser } from '../user-management.model';
+import { IUserManagement } from '../user-management.model';
 
-const userTemplate = {} as IUser;
+const userTemplate = {} as IUserManagement;
 
-const newUser: IUser = {
+const newUser: IUserManagement = {
   activated: true,
-} as IUser;
+} as IUserManagement;
 
 @Component({
-  selector: 'jhi-user-mgmt-update',
+  selector: 'jhi-user-management-update',
   templateUrl: './user-management-update.html',
   imports: [FontAwesomeModule, AlertError, ReactiveFormsModule],
 })
-export default class UserManagementUpdate implements OnInit {
-  authorities = signal<string[]>([]);
-  isSaving = signal(false);
+export class UserManagementUpdate implements OnInit {
+  readonly isSaving = signal(false);
 
   editForm = new FormGroup({
     id: new FormControl(userTemplate.id),
@@ -44,18 +44,24 @@ export default class UserManagementUpdate implements OnInit {
     authorities: new FormControl(userTemplate.authorities, { nonNullable: true }),
   });
 
+  protected readonly authorityService = inject(AuthorityService);
+  // eslint-disable-next-line @typescript-eslint/member-ordering
+  readonly authorities = computed(() => this.authorityService.authorities().map(authority => authority.name));
   private readonly userService = inject(UserManagementService);
   private readonly route = inject(ActivatedRoute);
 
+  constructor() {
+    this.authorityService.authoritiesParams.set({});
+  }
+
   ngOnInit(): void {
-    this.route.data.subscribe(({ user }) => {
-      if (user) {
-        this.editForm.reset(user);
+    this.route.data.subscribe(({ userManagement }) => {
+      if (userManagement) {
+        this.editForm.reset(userManagement);
       } else {
         this.editForm.reset(newUser);
       }
     });
-    this.userService.authorities().subscribe(authorities => this.authorities.set(authorities));
   }
 
   previousState(): void {

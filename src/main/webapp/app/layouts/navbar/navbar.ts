@@ -2,7 +2,8 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap/collapse';
+import { NgbDropdown, NgbDropdownMenu, NgbDropdownToggle } from '@ng-bootstrap/ng-bootstrap/dropdown';
 import { environment } from 'environments/environment';
 
 import { AccountService } from 'app/core/auth/account.service';
@@ -14,14 +15,23 @@ import HasAnyAuthorityDirective from 'app/shared/auth/has-any-authority.directiv
   selector: 'jhi-navbar',
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
-  imports: [RouterLink, RouterLinkActive, FontAwesomeModule, NgbModule, HasAnyAuthorityDirective],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    FontAwesomeModule,
+    NgbCollapse,
+    NgbDropdown,
+    NgbDropdownMenu,
+    NgbDropdownToggle,
+    HasAnyAuthorityDirective,
+  ],
 })
 export default class Navbar implements OnInit {
-  inProduction = signal(true);
-  isNavbarCollapsed = signal(true);
-  openAPIEnabled = signal(false);
+  readonly inProduction = signal(true);
+  readonly isNavbarCollapsed = signal(true);
+  readonly openAPIEnabled = signal(false);
   readonly version: string;
-  account = inject(AccountService).trackCurrentAccount();
+  readonly account = inject(AccountService).account;
 
   private readonly loginService = inject(LoginService);
   private readonly profileService = inject(ProfileService);
@@ -55,9 +65,5 @@ export default class Navbar implements OnInit {
     this.collapseNavbar();
     this.loginService.logout();
     this.router.navigate(['']);
-  }
-
-  toggleNavbar(): void {
-    this.isNavbarCollapsed.update(isNavbarCollapsed => !isNavbarCollapsed);
   }
 }

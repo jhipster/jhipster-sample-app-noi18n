@@ -6,7 +6,7 @@ import { Component, ElementRef, Renderer2, effect, inject, input } from '@angula
   styleUrl: './password-strength-bar.scss',
 })
 export default class PasswordStrengthBar {
-  passwordToCheck = input<string>('');
+  readonly passwordToCheck = input<string>('');
 
   colors = ['#F00', '#F90', '#FF0', '#9F0', '#0F0'];
 

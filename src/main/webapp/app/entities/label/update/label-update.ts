@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
 
@@ -19,10 +18,10 @@ import { LabelFormGroup, LabelFormService } from './label-form.service';
 @Component({
   selector: 'jhi-label-update',
   templateUrl: './label-update.html',
-  imports: [NgbModule, FontAwesomeModule, AlertError, ReactiveFormsModule],
+  imports: [FontAwesomeModule, AlertError, ReactiveFormsModule],
 })
 export class LabelUpdate implements OnInit {
-  isSaving = signal(false);
+  readonly isSaving = signal(false);
   label: ILabel | null = null;
 
   operationsSharedCollection = signal<IOperation[]>([]);
@@ -62,7 +61,7 @@ export class LabelUpdate implements OnInit {
     }
   }
 
-  protected subscribeToSaveResponse(result: Observable<HttpResponse<ILabel>>): void {
+  protected subscribeToSaveResponse(result: Observable<ILabel | null>): void {
     result.pipe(finalize(() => this.onSaveFinalize())).subscribe({
       next: () => this.onSaveSuccess(),
       error: () => this.onSaveError(),
@@ -85,8 +84,8 @@ export class LabelUpdate implements OnInit {
     this.label = label;
     this.labelFormService.resetForm(this.editForm, label);
 
-    this.operationsSharedCollection.set(
-      this.operationService.addOperationToCollectionIfMissing<IOperation>(this.operationsSharedCollection(), ...(label.operations ?? [])),
+    this.operationsSharedCollection.update(operations =>
+      this.operationService.addOperationToCollectionIfMissing<IOperation>(operations, ...(label.operations ?? [])),
     );
   }
 

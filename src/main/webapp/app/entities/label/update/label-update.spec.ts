@@ -83,7 +83,7 @@ describe('Label Management Update Component', () => {
   describe('save', () => {
     it('should call update service on save for existing entity', () => {
       // GIVEN
-      const saveSubject = new Subject<HttpResponse<ILabel>>();
+      const saveSubject = new Subject<ILabel>();
       const label = { id: 4199 };
       vitest.spyOn(labelFormService, 'getLabel').mockReturnValue(label);
       vitest.spyOn(labelService, 'update').mockReturnValue(saveSubject);
@@ -94,7 +94,7 @@ describe('Label Management Update Component', () => {
       // WHEN
       comp.save();
       expect(comp.isSaving()).toEqual(true);
-      saveSubject.next(new HttpResponse({ body: label }));
+      saveSubject.next(label);
       saveSubject.complete();
 
       // THEN
@@ -106,7 +106,7 @@ describe('Label Management Update Component', () => {
 
     it('should call create service on save for new entity', () => {
       // GIVEN
-      const saveSubject = new Subject<HttpResponse<ILabel>>();
+      const saveSubject = new Subject<ILabel>();
       const label = { id: 4199 };
       vitest.spyOn(labelFormService, 'getLabel').mockReturnValue({ id: null });
       vitest.spyOn(labelService, 'create').mockReturnValue(saveSubject);
@@ -117,7 +117,7 @@ describe('Label Management Update Component', () => {
       // WHEN
       comp.save();
       expect(comp.isSaving()).toEqual(true);
-      saveSubject.next(new HttpResponse({ body: label }));
+      saveSubject.next(label);
       saveSubject.complete();
 
       // THEN
@@ -129,7 +129,7 @@ describe('Label Management Update Component', () => {
 
     it('should set isSaving to false on error', () => {
       // GIVEN
-      const saveSubject = new Subject<HttpResponse<ILabel>>();
+      const saveSubject = new Subject<ILabel>();
       const label = { id: 4199 };
       vitest.spyOn(labelService, 'update').mockReturnValue(saveSubject);
       vitest.spyOn(comp, 'previousState');

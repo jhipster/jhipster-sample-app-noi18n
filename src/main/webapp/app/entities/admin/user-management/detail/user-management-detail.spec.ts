@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 
 import { Authority } from 'app/shared/jhipster/constants';
 
-import UserManagementDetail from './user-management-detail';
+import { UserManagementDetail } from './user-management-detail';
 
 describe('User Management Detail Component', () => {
   beforeEach(() => {
@@ -19,9 +19,9 @@ describe('User Management Detail Component', () => {
           [
             {
               path: '**',
-              loadComponent: () => import('./user-management-detail'),
+              loadComponent: () => import('./user-management-detail').then(m => m.UserManagementDetail),
               resolve: {
-                user: () =>
+                userManagement: () =>
                   of({
                     id: 123,
                     login: 'user',
@@ -52,7 +52,7 @@ describe('User Management Detail Component', () => {
       const instance = await harness.navigateByUrl('/', UserManagementDetail);
 
       // THEN
-      expect(instance.user()).toEqual(
+      expect(instance.userManagement()).toEqual(
         expect.objectContaining({
           id: 123,
           login: 'user',

@@ -1,10 +1,8 @@
-import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 
@@ -17,10 +15,10 @@ import { AuthorityFormGroup, AuthorityFormService } from './authority-form.servi
 @Component({
   selector: 'jhi-authority-update',
   templateUrl: './authority-update.html',
-  imports: [NgbModule, FontAwesomeModule, AlertError, ReactiveFormsModule],
+  imports: [FontAwesomeModule, AlertError, ReactiveFormsModule],
 })
 export class AuthorityUpdate implements OnInit {
-  isSaving = signal(false);
+  readonly isSaving = signal(false);
   authority: IAuthority | null = null;
 
   protected authorityService = inject(AuthorityService);
@@ -49,7 +47,7 @@ export class AuthorityUpdate implements OnInit {
     this.subscribeToSaveResponse(this.authorityService.create(authority));
   }
 
-  protected subscribeToSaveResponse(result: Observable<HttpResponse<IAuthority>>): void {
+  protected subscribeToSaveResponse(result: Observable<IAuthority | null>): void {
     result.pipe(finalize(() => this.onSaveFinalize())).subscribe({
       next: () => this.onSaveSuccess(),
       error: () => this.onSaveError(),

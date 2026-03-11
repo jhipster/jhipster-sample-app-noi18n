@@ -3,7 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, inject, signal } from '@angular/core';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal';
 
 import { HealthDetails, HealthModel, HealthStatus } from './health.model';
 import { HealthService } from './health.service';
@@ -15,7 +15,7 @@ import HealthModal from './modal/health-modal';
   imports: [FontAwesomeModule, KeyValuePipe],
 })
 export default class Health implements OnInit {
-  health = signal<HealthModel | null>(null);
+  readonly health = signal<HealthModel | null>(null);
 
   private readonly modalService = inject(NgbModal);
   private readonly healthService = inject(HealthService);
