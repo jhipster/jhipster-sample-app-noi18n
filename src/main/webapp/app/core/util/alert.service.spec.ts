@@ -31,7 +31,7 @@ describe('Alert Service Test', () => {
         timeout: 3000,
         toast: true,
         position: 'top left',
-      } as AlertModel),
+      }),
     );
 
     expect(service.get().length).toBe(1);
@@ -43,7 +43,7 @@ describe('Alert Service Test', () => {
         timeout: 3000,
         toast: true,
         position: 'top left',
-      } as AlertModel),
+      }),
     );
   });
 
@@ -67,7 +67,7 @@ describe('Alert Service Test', () => {
         timeout: 3000,
         toast: true,
         position: 'top left',
-      } as AlertModel),
+      }),
     );
 
     expect(extAlerts.length).toBe(1);
@@ -79,7 +79,7 @@ describe('Alert Service Test', () => {
         timeout: 3000,
         toast: true,
         position: 'top left',
-      } as AlertModel),
+      }),
     );
   });
 
@@ -90,7 +90,7 @@ describe('Alert Service Test', () => {
         type: 'success',
         message: 'Hello JHipster success',
         id: 1,
-      } as AlertModel),
+      }),
     );
 
     expect(service.get().length).toBe(2);
@@ -99,7 +99,7 @@ describe('Alert Service Test', () => {
         type: 'success',
         message: 'Hello JHipster success',
         id: 1,
-      } as AlertModel),
+      }),
     );
   });
 
@@ -112,7 +112,7 @@ describe('Alert Service Test', () => {
         type: 'success',
         message: 'Hello JHipster success',
         id: 2,
-      } as AlertModel),
+      }),
     );
 
     expect(service.get().length).toBe(3);
@@ -123,7 +123,7 @@ describe('Alert Service Test', () => {
         type: 'info',
         message: 'Hello Jhipster info 2',
         id: 1,
-      } as AlertModel),
+      }),
     );
     alert2.close?.(service.get());
     expect(service.get().length).toBe(1);
@@ -132,7 +132,7 @@ describe('Alert Service Test', () => {
         type: 'success',
         message: 'Hello JHipster success',
         id: 2,
-      } as AlertModel),
+      }),
     );
     alert0.close?.(service.get());
     expect(service.get().length).toBe(0);
@@ -177,7 +177,7 @@ describe('Alert Service Test', () => {
         timeout: 3000,
         toast: true,
         position: 'top left',
-      } as AlertModel),
+      }),
     );
 
     expect(service.get().length).toBe(0);
@@ -188,7 +188,7 @@ describe('Alert Service Test', () => {
       expect.objectContaining({
         type: 'success',
         message: 'Hello Jhipster',
-      } as AlertModel),
+      }),
     );
   });
 
@@ -198,7 +198,7 @@ describe('Alert Service Test', () => {
         type: 'success',
         message: 'Hello Jhipster',
         position: 'bottom left',
-      } as AlertModel),
+      }),
     );
   });
 
@@ -207,7 +207,7 @@ describe('Alert Service Test', () => {
       expect.objectContaining({
         type: 'danger',
         message: 'Hello Jhipster',
-      } as AlertModel),
+      }),
     );
   });
 
@@ -216,7 +216,7 @@ describe('Alert Service Test', () => {
       expect.objectContaining({
         type: 'warning',
         message: 'Hello Jhipster',
-      } as AlertModel),
+      }),
     );
   });
 
@@ -225,7 +225,7 @@ describe('Alert Service Test', () => {
       expect.objectContaining({
         type: 'info',
         message: 'Hello Jhipster',
-      } as AlertModel),
+      }),
     );
   });
 });

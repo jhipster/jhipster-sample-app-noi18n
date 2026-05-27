@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -9,6 +9,7 @@ import { FormatMediumDatetimePipe } from 'app/shared/date';
 import { IOperation } from '../operation.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'jhi-operation-detail',
   templateUrl: './operation-detail.html',
   imports: [FontAwesomeModule, Alert, AlertError, RouterLink, FormatMediumDatetimePipe],

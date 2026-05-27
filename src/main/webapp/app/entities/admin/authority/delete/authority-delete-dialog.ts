@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,6 +10,7 @@ import { IAuthority } from '../authority.model';
 import { AuthorityService } from '../service/authority.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './authority-delete-dialog.html',
   imports: [FormsModule, FontAwesomeModule, AlertError],
 })

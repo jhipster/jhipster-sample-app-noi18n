@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnDestroy, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, inject, signal } from '@angular/core';
 
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap/alert';
 import { Subscription } from 'rxjs';
@@ -12,6 +12,7 @@ import { AlertErrorModel } from './alert-error.model';
 
 @Component({
   selector: 'jhi-alert-error',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './alert-error.html',
   imports: [NgbAlert],
 })

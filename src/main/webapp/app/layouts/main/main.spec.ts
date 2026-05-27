@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vitest } from 'vitest';
 import { DOCUMENT } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Title } from '@angular/platform-browser';
 import { Router, TitleStrategy } from '@angular/router';
@@ -112,6 +112,7 @@ describe('Main', () => {
 });
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: '',
 })
 export class Blank {}

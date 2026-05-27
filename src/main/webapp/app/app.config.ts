@@ -1,5 +1,5 @@
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { ApplicationConfig, LOCALE_ID, importProvidersFrom, inject } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import {
   NavigationError,
@@ -11,7 +11,7 @@ import {
   withDebugTracing,
   withNavigationErrorHandler,
 } from '@angular/router';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { provideServiceWorker } from '@angular/service-worker';
 
 import { NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap/datepicker';
 import { environment } from 'environments/environment';
@@ -49,7 +49,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, ...routerFeatures),
     // Set this to true to enable service worker (PWA)
-    importProvidersFrom(ServiceWorkerModule.register('ngsw-worker.js', { enabled: false })),
+    provideServiceWorker('ngsw-worker.js', { enabled: false }),
     provideHttpClient(withInterceptors([authExpiredInterceptor, errorHandlerInterceptor, notificationInterceptor])),
     Title,
     { provide: LOCALE_ID, useValue: 'en' },

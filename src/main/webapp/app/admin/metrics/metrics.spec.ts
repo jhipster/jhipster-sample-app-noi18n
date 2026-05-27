@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
 import Metrics from './metrics';
-import { MetricsModel, Thread, ThreadDump } from './metrics.model';
+import { MetricsModel, Thread } from './metrics.model';
 import { MetricsService } from './metrics.service';
 
 describe('Metrics', () => {
@@ -37,7 +37,7 @@ describe('Metrics', () => {
           },
         },
       } as unknown as MetricsModel;
-      const threadDump = { threads: [{ threadName: 'thread 1' } as Thread] } as ThreadDump;
+      const threadDump = { threads: [{ threadName: 'thread 1' } as Thread] };
 
       vitest.spyOn(service, 'getMetrics').mockReturnValue(of(metrics));
       vitest.spyOn(service, 'threadDump').mockReturnValue(of(threadDump));

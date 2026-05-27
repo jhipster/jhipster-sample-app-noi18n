@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -7,6 +7,7 @@ import { AlertError } from 'app/shared/alert/alert-error';
 import { IAuthority } from '../authority.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'jhi-authority-detail',
   templateUrl: './authority-detail.html',
   imports: [FontAwesomeModule, Alert, AlertError],

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,6 +8,7 @@ import { AlertError } from 'app/shared/alert/alert-error';
 import { ILabel } from '../label.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'jhi-label-detail',
   templateUrl: './label-detail.html',
   imports: [FontAwesomeModule, Alert, AlertError, RouterLink],

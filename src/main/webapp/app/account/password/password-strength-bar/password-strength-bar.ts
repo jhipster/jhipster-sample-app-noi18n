@@ -1,12 +1,13 @@
-import { Component, ElementRef, Renderer2, effect, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Renderer2, effect, inject, input } from '@angular/core';
 
 @Component({
   selector: 'jhi-password-strength-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './password-strength-bar.html',
   styleUrl: './password-strength-bar.scss',
 })
 export default class PasswordStrengthBar {
-  readonly passwordToCheck = input<string>('');
+  readonly passwordToCheck = input('');
 
   colors = ['#F00', '#F90', '#FF0', '#9F0', '#0F0'];
 

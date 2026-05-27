@@ -59,20 +59,18 @@ import tech.jhipster.web.util.ResponseUtil;
 @RequestMapping("/api/admin")
 public class UserResource {
 
-    private static final List<String> ALLOWED_ORDERED_PROPERTIES = Collections.unmodifiableList(
-        Arrays.asList(
-            "id",
-            "login",
-            "firstName",
-            "lastName",
-            "email",
-            "activated",
-            "langKey",
-            "createdBy",
-            "createdDate",
-            "lastModifiedBy",
-            "lastModifiedDate"
-        )
+    private static final List<String> ALLOWED_ORDERED_PROPERTIES = List.of(
+        "id",
+        "login",
+        "firstName",
+        "lastName",
+        "email",
+        "activated",
+        "langKey",
+        "createdBy",
+        "createdDate",
+        "lastModifiedBy",
+        "lastModifiedDate"
     );
 
     private static final Logger LOG = LoggerFactory.getLogger(UserResource.class);

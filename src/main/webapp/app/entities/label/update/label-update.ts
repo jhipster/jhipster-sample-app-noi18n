@@ -1,11 +1,10 @@
 import { HttpResponse } from '@angular/common/http';
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { Observable } from 'rxjs';
-import { finalize, map } from 'rxjs/operators';
+import { Observable, finalize, map } from 'rxjs';
 
 import { IOperation } from 'app/entities/operation/operation.model';
 import { OperationService } from 'app/entities/operation/service/operation.service';
@@ -16,6 +15,7 @@ import { LabelService } from '../service/label.service';
 import { LabelFormGroup, LabelFormService } from './label-form.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'jhi-label-update',
   templateUrl: './label-update.html',
   imports: [FontAwesomeModule, AlertError, ReactiveFormsModule],

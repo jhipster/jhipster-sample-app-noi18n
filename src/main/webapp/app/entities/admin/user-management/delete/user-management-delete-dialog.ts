@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -10,6 +10,7 @@ import { UserManagementService } from '../service/user-management.service';
 import { IUserManagement } from '../user-management.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './user-management-delete-dialog.html',
   imports: [FormsModule, FontAwesomeModule, AlertError],
 })

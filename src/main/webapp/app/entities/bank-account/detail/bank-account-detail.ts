@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -8,6 +8,7 @@ import { AlertError } from 'app/shared/alert/alert-error';
 import { IBankAccount } from '../bank-account.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'jhi-bank-account-detail',
   templateUrl: './bank-account-detail.html',
   imports: [FontAwesomeModule, Alert, AlertError, RouterLink],

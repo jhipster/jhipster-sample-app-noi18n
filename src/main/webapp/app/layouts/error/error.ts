@@ -1,8 +1,9 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'jhi-error',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 
   templateUrl: './error.html',
 })

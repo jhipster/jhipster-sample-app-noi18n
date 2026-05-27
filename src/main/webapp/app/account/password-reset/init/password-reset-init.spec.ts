@@ -23,7 +23,7 @@ describe('PasswordResetInit', () => {
     const node = {
       focus: vitest.fn(),
     };
-    comp.email = signal<ElementRef>(new ElementRef(node));
+    comp.email = signal(new ElementRef(node));
 
     comp.ngAfterViewInit();
 

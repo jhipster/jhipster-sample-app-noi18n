@@ -15,7 +15,7 @@ describe('UserManagement e2e test', () => {
   const userManagementPageUrlPattern = new RegExp('/user-management(\\?.*)?$');
   let username: string;
   let password: string;
-  const userManagementSample = { login: 'Robin38', email: 'Audrey_Fisher52@yahoo.com' };
+  const userManagementSample = { login: 'Roderick38', email: 'Ashley_Fisher52@yahoo.com' };
 
   let userManagement;
 
@@ -175,8 +175,8 @@ describe('UserManagement e2e test', () => {
       cy.get(`[data-cy="lastName"]`).type('Schimmel-Bartell');
       cy.get(`[data-cy="lastName"]`).should('have.value', 'Schimmel-Bartell');
 
-      cy.get(`[data-cy="email"]`).type('Alexander51@gmail.com');
-      cy.get(`[data-cy="email"]`).should('have.value', 'Alexander51@gmail.com');
+      cy.get(`[data-cy="email"]`).type('Alex51@gmail.com');
+      cy.get(`[data-cy="email"]`).should('have.value', 'Alex51@gmail.com');
 
       cy.get(`[data-cy="activated"]`).should('be.checked');
       cy.get(`[data-cy="activated"]`).click();

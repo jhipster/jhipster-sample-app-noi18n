@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { Account } from 'app/core/auth/account.model';
@@ -9,6 +9,7 @@ const initialAccount: Account = {} as Account;
 
 @Component({
   selector: 'jhi-settings',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [AlertError, ReactiveFormsModule],
   templateUrl: './settings.html',
 })
