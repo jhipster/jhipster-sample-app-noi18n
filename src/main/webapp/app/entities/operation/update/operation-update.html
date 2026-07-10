@@ -29,12 +29,10 @@
           </div>
           @if (dateRef.invalid && (dateRef.dirty || dateRef.touched)) {
             <div>
-              @if (editForm.get('date')?.errors?.required) {
+              @if (dateRef.errors?.required) {
                 <small class="form-text text-danger">This field is required.</small>
               }
-              <small class="form-text text-danger" [hidden]="!editForm.get('date')?.errors?.datetimelocal"
-                >This field should be a date and time.</small
-              >
+              <small class="form-text text-danger" [hidden]="!dateRef.errors?.datetimelocal">This field should be a date and time.</small>
             </div>
           }
         </div>
@@ -57,10 +55,10 @@
           <input type="number" class="form-control" name="amount" id="field_amount" data-cy="amount" formControlName="amount" />
           @if (amountRef.invalid && (amountRef.dirty || amountRef.touched)) {
             <div>
-              @if (editForm.get('amount')?.errors?.required) {
+              @if (amountRef.errors?.required) {
                 <small class="form-text text-danger">This field is required.</small>
               }
-              <small class="form-text text-danger" [hidden]="!editForm.get('amount')?.errors?.number">This field should be a number.</small>
+              <small class="form-text text-danger" [hidden]="!amountRef.errors?.number">This field should be a number.</small>
             </div>
           }
         </div>

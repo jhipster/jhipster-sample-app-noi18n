@@ -12,7 +12,6 @@ import {
 
 describe('Operation e2e test', () => {
   const operationPageUrl = '/operation';
-  const operationPageUrlPattern = new RegExp('/operation(\\?.*)?$');
   let username: string;
   let password: string;
   const operationSample = { date: '2015-08-04T18:17:34.367Z', amount: 26325.9 };
@@ -57,7 +56,7 @@ describe('Operation e2e test', () => {
       }
     });
     cy.getEntityHeading('Operation').should('exist');
-    cy.url().should('match', operationPageUrlPattern);
+    cy.location('pathname').should('eq', operationPageUrl);
   });
 
   describe('Operation page', () => {
@@ -69,14 +68,14 @@ describe('Operation e2e test', () => {
 
       it('should load create Operation page', () => {
         cy.get(entityCreateButtonSelector).click();
-        cy.url().should('match', new RegExp('/operation/new$'));
+        cy.location('pathname').should('eq', `${operationPageUrl}/new`);
         cy.getEntityCreateUpdateHeading('Operation');
         cy.get(entityCreateSaveButtonSelector).should('exist');
         cy.get(entityCreateCancelButtonSelector).click();
         cy.wait('@entitiesRequest').then(({ response }) => {
           expect(response?.statusCode).to.equal(200);
         });
-        cy.url().should('match', operationPageUrlPattern);
+        cy.location('pathname').should('eq', operationPageUrl);
       });
     });
 
@@ -117,7 +116,7 @@ describe('Operation e2e test', () => {
         cy.wait('@entitiesRequest').then(({ response }) => {
           expect(response?.statusCode).to.equal(200);
         });
-        cy.url().should('match', operationPageUrlPattern);
+        cy.location('pathname').should('eq', operationPageUrl);
       });
 
       it('edit button click should load edit Operation page and go back', () => {
@@ -128,7 +127,7 @@ describe('Operation e2e test', () => {
         cy.wait('@entitiesRequest').then(({ response }) => {
           expect(response?.statusCode).to.equal(200);
         });
-        cy.url().should('match', operationPageUrlPattern);
+        cy.location('pathname').should('eq', operationPageUrl);
       });
 
       it('edit button click should load edit Operation page and save', () => {
@@ -138,7 +137,7 @@ describe('Operation e2e test', () => {
         cy.wait('@entitiesRequest').then(({ response }) => {
           expect(response?.statusCode).to.equal(200);
         });
-        cy.url().should('match', operationPageUrlPattern);
+        cy.location('pathname').should('eq', operationPageUrl);
       });
 
       it('last delete button click should delete instance of Operation', () => {
@@ -151,7 +150,7 @@ describe('Operation e2e test', () => {
         cy.wait('@entitiesRequest').then(({ response }) => {
           expect(response?.statusCode).to.equal(200);
         });
-        cy.url().should('match', operationPageUrlPattern);
+        cy.location('pathname').should('eq', operationPageUrl);
 
         operation = undefined;
       });
@@ -185,7 +184,7 @@ describe('Operation e2e test', () => {
       cy.wait('@entitiesRequest').then(({ response }) => {
         expect(response?.statusCode).to.equal(200);
       });
-      cy.url().should('match', operationPageUrlPattern);
+      cy.location('pathname').should('eq', operationPageUrl);
     });
   });
 });
