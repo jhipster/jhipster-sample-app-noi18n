@@ -1,5 +1,5 @@
 import { HttpResponse } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,14 +10,13 @@ import { IBankAccount } from 'app/entities/bank-account/bank-account.model';
 import { BankAccountService } from 'app/entities/bank-account/service/bank-account.service';
 import { ILabel } from 'app/entities/label/label.model';
 import { LabelService } from 'app/entities/label/service/label.service';
-import { AlertError } from 'app/shared/alert/alert-error';
+import { AlertError } from 'app/shared/alert';
 import { IOperation } from '../operation.model';
 import { OperationService } from '../service/operation.service';
 
 import { OperationFormGroup, OperationFormService } from './operation-form.service';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'jhi-operation-update',
   templateUrl: './operation-update.html',
   imports: [FontAwesomeModule, AlertError, ReactiveFormsModule],

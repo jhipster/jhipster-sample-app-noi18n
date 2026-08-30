@@ -1,15 +1,13 @@
 import { DatePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 
-import { Account } from 'app/core/auth/account.model';
-import { AccountService } from 'app/core/auth/account.service';
+import { Account, AccountService } from 'app/core/auth';
 
 import { Session } from './session.model';
 import { SessionsService } from './sessions.service';
 
 @Component({
   selector: 'jhi-sessions',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [DatePipe],
   templateUrl: './sessions.html',
 })

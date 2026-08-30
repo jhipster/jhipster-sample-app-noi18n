@@ -1,16 +1,15 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap/modal';
 
-import { ITEM_DELETED_EVENT } from 'app/config/navigation.constants';
-import { AlertError } from 'app/shared/alert/alert-error';
+import { ITEM_DELETED_EVENT } from 'app/config';
+import { AlertError } from 'app/shared/alert';
 import { IOperation } from '../operation.model';
 import { OperationService } from '../service/operation.service';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './operation-delete-dialog.html',
   imports: [FormsModule, FontAwesomeModule, AlertError],
 })
